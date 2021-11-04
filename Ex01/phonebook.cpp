@@ -10,7 +10,7 @@ void ft_add (contact *cnt)
 	cin >> cnt->nick;
 	cout << "Please enter the phone number:\n";
 	cin >> cnt->phone;
-	cout << "Please enter the darkest secret:\n";
+	cout << "Please reveal your darkest secret:\n";
 	cin >> cnt->secret;
 }
 
