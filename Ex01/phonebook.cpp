@@ -1,4 +1,4 @@
-#include "phonebook.h"
+#include "phonebook.hpp"
 
 void ft_add (contact *cnt)
 {
@@ -26,7 +26,7 @@ void ft_search (contact	*cnt, int i)
 		if (com < 48 || com > (i + 48))
 			cout << "\n Invalid contact #, try again.\n";
 	}
-	cnt += --i;
+	cnt += (com - 49);
 	cnt->printc();
 }
 
@@ -34,6 +34,7 @@ void ft_printl (contact	*cnt, int i)
 {
 	int j = 0;
 
+	cout << "I IS: " << i;
 	cout << "\n#|FIRST NAME|LAST NAME | NICKNAME |  PHONE # | DARK SEC |\n" ;
 	while (j++ < i)
 	{
@@ -72,9 +73,9 @@ int	main ()
 		cin >> com;
 		if (!strcmp(com, "ADD"))
 		{
-			ft_add(&cnt[i]);
-			if (i < 7)
+			if (i < 8)
 				i++;
+			ft_add(&cnt[i - 1]);
 		}
 		else if (!strcmp(com, "SEARCH"))
 		{
