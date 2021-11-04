@@ -15,7 +15,7 @@ SRCS			=	phonebook.cpp
 OBJS 			=	$(SRCS:.cpp=.o)
 CC				=	@g++ -g -Wall -Wextra -Werror
 
-// -fsanitize=address -pthread
+# -fsanitize=address -pthread
 
 all: $(NAME)
 
@@ -33,5 +33,3 @@ fclean: clean
 	@rm -f $(NAME)
 
 re: fclean all
-
-.PHONY: all clean fclean re run
