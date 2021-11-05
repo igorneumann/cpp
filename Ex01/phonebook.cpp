@@ -2,15 +2,15 @@
 
 void ft_add (contact *cnt)
 {
-	cout << "Please enter the first name:\n";
+	cout << "Please enter the first name:" << endl;
 	cin >> cnt->fname;
-	cout << "Please enter the last name:\n";
+	cout << "Please enter the last name:" << endl;
 	cin >> cnt->lname;
-	cout << "Please enter the nickname:\n";
+	cout << "Please enter the nickname:" << endl;
 	cin >> cnt->nick;
-	cout << "Please enter the phone number:\n";
+	cout << "Please enter the phone number:" << endl;
 	cin >> cnt->phone;
-	cout << "Please reveal your darkest secret:\n";
+	cout << "Please reveal your darkest secret:" << endl;
 	cin >> cnt->secret;
 }
 
@@ -21,10 +21,10 @@ void ft_search (contact	*cnt, int i)
 	while (com < 48 || com > (i + 48))
 	{
 		ft_printl (cnt, i);
-		cout << "\nEnter the contact # you want to search\n";
+		cout << "\nEnter the contact # you want to search" << endl;
 		cin >> com;
 		if (com < 48 || com > (i + 48))
-			cout << "\n Invalid contact #, try again.\n";
+			cout << "\n Invalid contact #, try again." << endl;
 	}
 	cnt += (com - 49);
 	cnt->printc();
@@ -35,10 +35,10 @@ void ft_printl (contact	*cnt, int i)
 	int j = 0;
 
 	cout << "I IS: " << i;
-	cout << "\n#|FIRST NAME|LAST NAME | NICKNAME |  PHONE # | DARK SEC |\n" ;
+	cout << "\n#|FIRST NAME|LAST NAME | NICKNAME |  PHONE # | DARK SEC |" << endl;
 	while (j++ < i)
 	{
-		cout << j  << "|" << tench(cnt->fname) << "|" << tench(cnt->lname) << "|" << tench(cnt->nick) << "|" << tench(cnt->phone) << "|" << tench(cnt->secret) << "|\n";
+		cout << j  << "|" << tench(cnt->fname) << "|" << tench(cnt->lname) << "|" << tench(cnt->nick) << "|" << tench(cnt->phone) << "|" << tench(cnt->secret) << "|" << endl;
 		cnt++;
 	}
 }
@@ -69,7 +69,7 @@ int	main ()
 	{
 		com = new char;
 		cout << "WELCOME TO MY AWESOME PHONEBOOK\n";
-		cout << "ADD, SEARCH or EXIT?\n";
+		cout << "ADD, SEARCH or EXIT?" << endl;
 		cin >> com;
 		if (!strcmp(com, "ADD"))
 		{
@@ -82,7 +82,7 @@ int	main ()
 			if (i > 0)
 				ft_search(cnt, i);
 			else
-				cout << "\nPhonebook is empty\n\n";
+				cout << "\nPhonebook is empty\n" << endl;
 		}
 	}
 	return 0;
