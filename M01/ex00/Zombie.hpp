@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Zombie.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: igorneumann <igorneumann@student.42.fr>    +#+  +:+       +#+        */
+/*   By: ineumann <ineumann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/08 08:21:11 by igorneumann       #+#    #+#             */
-/*   Updated: 2021/11/08 09:54:31 by igorneumann      ###   ########.fr       */
+/*   Updated: 2021/12/21 18:59:03 by ineumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

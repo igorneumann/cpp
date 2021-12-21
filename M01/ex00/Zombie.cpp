@@ -3,27 +3,32 @@
 /*                                                        :::      ::::::::   */
 /*   Zombie.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: igorneumann <igorneumann@student.42.fr>    +#+  +:+       +#+        */
+/*   By: ineumann <ineumann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/08 08:18:42 by igorneumann       #+#    #+#             */
-/*   Updated: 2021/11/08 09:52:28 by igorneumann      ###   ########.fr       */
+/*   Updated: 2021/12/21 18:59:04 by ineumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-Zombie::Zombie( string name )
+Zombie::Zombie( std::string name )
 {
 	_name = name;
-	return ;
 }
 
-Zombie::~Zombie()
+Zombie::~Zombie( void )
 {
-	return ;
+	std::cout << _name << "No more Brainz..." << std::endl;
+}
+ 
+void randomChump( std::string name )
+{
+	Zombie zmb(name);
+	zmb.announce();
 }
 
 void Zombie::announce( void )
-	{
-		cout << "<" << this->_name << "> BraiiiiiiinnnzzzZ..." << endl;
-	};
+{
+	std::cout << "<" << this->_name << "> BraiiiiiiinnnzzzZ..." << std::endl;
+}

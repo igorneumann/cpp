@@ -3,15 +3,15 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: igorneumann <igorneumann@student.42.fr>    +#+  +:+       +#+         #
+#    By: ineumann <ineumann@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/08 08:23:57 by igorneumann       #+#    #+#              #
-#    Updated: 2021/11/08 08:24:12 by igorneumann      ###   ########.fr        #
+#    Updated: 2021/12/21 18:56:08 by ineumann         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME			=	zombie
-SRCS			=	main.cpp Zombie.cpp Zombie.hpp newZombie.cpp randomChump.cpp
+SRCS			=	main.cpp Zombie.cpp newZombie.cpp
 OBJS 			=	$(SRCS:.cpp=.o)
 CC				=	@g++ -g -Wall -Wextra -Werror
 

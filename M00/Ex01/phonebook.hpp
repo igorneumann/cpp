@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   phonebook.h                                        :+:      :+:    :+:   */
+/*   phonebook.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ineumann <ineumann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/29 18:56:56 by ineumann          #+#    #+#             */
-/*   Updated: 2021/10/29 18:39:24 by ineumann         ###   ########.fr       */
+/*   Updated: 2021/12/21 18:33:38 by ineumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,29 +19,27 @@
 #include <string_view>
 #include <cstring>
 
-using namespace std;
-
 class contact
 {
 	// Access specifier
 	public:
 
 	// Data
-	string	fname;
-	string	lname;
-	string	nick;
-	string	phone;
-	string	secret;
+	std::string	fname;
+	std::string	lname;
+	std::string	nick;
+	std::string	phone;
+	std::string	secret;
 	int		i;
 
 	// Print Contact Function()
 	void printc()
 	{
-		cout << "\nFirst Name is: " << fname;
-		cout << "\nLast Name is: " << lname;
-		cout << "\nNickname is: " << nick;
-		cout << "\nPhone number is: " << phone;
-		cout << "\nDarkest Secret is: " << secret << "\n\n";
+		std::cout << "\nFirst Name is: " << fname;
+		std::cout << "\nLast Name is: " << lname;
+		std::cout << "\nNickname is: " << nick;
+		std::cout << "\nPhone number is: " << phone;
+		std::cout << "\nDarkest Secret is: " << secret << "\n\n";
 	}
 };
 
@@ -53,6 +51,6 @@ int					main ();
 void 				ft_search (contact *cnt, int i);
 void				ft_add (contact *cnt);
 void				ft_printl (contact	*cnt, int i);
-string				tench(string input);
+std::string			tench(std::string input);
 
 #endif
