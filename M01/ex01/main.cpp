@@ -1,34 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.cpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ineumann <ineumann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/08 08:18:42 by igorneumann       #+#    #+#             */
-/*   Updated: 2022/01/11 19:01:43 by ineumann         ###   ########.fr       */
+/*   Created: 2021/11/08 08:18:27 by igorneumann       #+#    #+#             */
+/*   Updated: 2022/01/11 19:03:27 by ineumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-Zombie::Zombie( std::string name )
+int	main(int argc, char **argv)
 {
-	_name = name;
-}
+	Zombie	*z;
+	int		i = 0;
+	int		zb = 0;
 
-Zombie::~Zombie( void )
-{
-	std::cout  << "<" << _name << "> No more Brainz..." << std::endl;
-}
- 
-void randomChump( std::string name )
-{
-	Zombie zmb(name);
-	zmb.announce();
-}
-
-void Zombie::announce( void )
-{
-	std::cout << "<" << this->_name << "> BraiiiiiiinnnzzzZ..." << std::endl;
+	if (argc != 3)
+	{
+		std::cout << "2 argumentos, primer  el numero de Zombies, sergundo su nombre";
+		return(0);
+	}
+	zb = atoi(argv[1]);
+	z = zombieHorde( zb, argv[2]);
+	while (i < zb)
+		z[i++].announce();
+	delete[] z;
+	return(0);
 }

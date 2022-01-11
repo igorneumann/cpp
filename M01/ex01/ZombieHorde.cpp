@@ -1,34 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.cpp                                         :+:      :+:    :+:   */
+/*   ZombieHorde.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ineumann <ineumann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/08 08:18:42 by igorneumann       #+#    #+#             */
-/*   Updated: 2022/01/11 19:01:43 by ineumann         ###   ########.fr       */
+/*   Created: 2022/01/11 17:39:25 by ineumann          #+#    #+#             */
+/*   Updated: 2022/01/11 19:00:59 by ineumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-Zombie::Zombie( std::string name )
+Zombie* zombieHorde( int N, std::string name )
 {
-	_name = name;
-}
-
-Zombie::~Zombie( void )
-{
-	std::cout  << "<" << _name << "> No more Brainz..." << std::endl;
-}
- 
-void randomChump( std::string name )
-{
-	Zombie zmb(name);
-	zmb.announce();
-}
-
-void Zombie::announce( void )
-{
-	std::cout << "<" << this->_name << "> BraiiiiiiinnnzzzZ..." << std::endl;
+	Zombie	*zombies = new Zombie[N];
+	while (N >= 0)
+		zombies[N--].setname(name);
+	return (zombies);
 }

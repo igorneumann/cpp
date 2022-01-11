@@ -5,14 +5,14 @@
 #                                                     +:+ +:+         +:+      #
 #    By: ineumann <ineumann@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2021/11/08 08:23:57 by igorneumann       #+#    #+#              #
-#    Updated: 2022/01/11 17:37:13 by ineumann         ###   ########.fr        #
+#    Created: 2022/01/11 17:30:02 by ineumann          #+#    #+#              #
+#    Updated: 2022/01/11 18:27:23 by ineumann         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME			=	zombie
-SRCS			=	main.cpp Zombie.cpp newZombie.cpp
-OBJS 			=	$(SRCS:.cpp=.o)
+NAME			=	zombieHorde
+SRCS			=	main.cpp Zombie.cpp ZombieHorde.cpp
+OBJS			=	$(SRCS:.cpp=.o)
 CC				=	@g++ -g -Wall -Wextra -Werror
 
 all: $(NAME)

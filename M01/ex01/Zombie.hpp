@@ -6,7 +6,7 @@
 /*   By: ineumann <ineumann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/08 08:21:11 by igorneumann       #+#    #+#             */
-/*   Updated: 2022/01/11 18:46:53 by ineumann         ###   ########.fr       */
+/*   Updated: 2022/01/11 18:47:47 by ineumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,10 @@
 class Zombie
 {
 	public:
-	Zombie(std::string name);
+	Zombie(void);
 	~Zombie(void);
 	void announce( void );
+	void setname( std::string name );
 
 	private:
 	std::string	_name;
@@ -31,7 +32,7 @@ class Zombie
 /*
 *** main.cpp
 */
-int	main(void);
+int	main(int argc, char **argv);
 
 /*
 *** Zombie.cpp
@@ -39,13 +40,8 @@ int	main(void);
 std::string announce( void );
 
 /*
-*** newZombie.cpp
+*** ZombieHorde.cpp
 */
-Zombie* newZombie(std::string name );
-
-/*
-*** randomChump.cpp
-*/
-void randomChump( std::string name );
+Zombie* zombieHorde( int N, std::string name );
 
 #endif
