@@ -6,7 +6,7 @@
 #    By: ineumann <ineumann@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/29 18:51:16 by ineumann          #+#    #+#              #
-#    Updated: 2021/12/21 18:28:40 by ineumann         ###   ########.fr        #
+#    Updated: 2022/01/11 17:37:41 by ineumann         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,6 @@ run: re
 
 clean:
 	@rm -f $(OBJS)
-	@rm -f $(NAME)
 
 fclean: clean
 	@rm -f $(NAME)

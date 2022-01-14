@@ -6,14 +6,14 @@
 #    By: ineumann <ineumann@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/11 17:30:02 by ineumann          #+#    #+#              #
-#    Updated: 2022/01/11 19:05:54 by ineumann         ###   ########.fr        #
+#    Updated: 2022/01/12 17:19:57 by ineumann         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME			=	thisisbrain
 SRCS			=	main.cpp 
 OBJS			=	$(SRCS:.cpp=.o)
-CC				=	@g++ -g -Wall -Wextra -Werror
+CC				=	@g++ -g -Wall -Wextra -Werror -std=c++98
 
 all: $(NAME)
 

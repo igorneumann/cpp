@@ -5,23 +5,20 @@
 #                                                     +:+ +:+         +:+      #
 #    By: ineumann <ineumann@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2021/07/29 18:51:16 by ineumann          #+#    #+#              #
-#    Updated: 2022/01/11 17:37:35 by ineumann         ###   ########.fr        #
+#    Created: 2022/01/12 17:59:04 by ineumann          #+#    #+#              #
+#    Updated: 2022/01/13 19:38:09 by ineumann         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME			=	account
-SRCS			=	Account.cpp tests.cpp
-OBJS 			=	$(SRCS:.cpp=.o)
+NAME			=	violence
+SRCS			=	main.cpp Weapon.cpp HumanA.cpp HumanB.cpp
+OBJS			=	$(SRCS:.cpp=.o)
 CC				=	@g++ -g -Wall -Wextra -Werror -std=c++98
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
 	$(CC) $(SRCS) -o $(NAME)
-
-run: re
-	@./account
 
 clean:
 	@rm -f $(OBJS)
@@ -31,4 +28,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all clean fclean re run
+.PHONY: all clean fclean re
