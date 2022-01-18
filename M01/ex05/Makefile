@@ -5,13 +5,13 @@
 #                                                     +:+ +:+         +:+      #
 #    By: ineumann <ineumann@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/01/14 18:36:20 by ineumann          #+#    #+#              #
-#    Updated: 2022/01/14 18:39:27 by ineumann         ###   ########.fr        #
+#    Created: 2022/01/18 18:47:15 by ineumann          #+#    #+#              #
+#    Updated: 2022/01/18 19:27:45 by ineumann         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME			=	bettersed
-SRCS			=	main.cpp
+NAME			=	karen
+SRCS			=	main.cpp Karen.hpp Karen.cpp
 OBJS			=	$(SRCS:.cpp=.o)
 CC				=	@g++ -g -Wall -Wextra -Werror -std=c++98
 
