@@ -6,7 +6,7 @@
 /*   By: ineumann <ineumann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/18 18:47:22 by ineumann          #+#    #+#             */
-/*   Updated: 2022/01/19 19:15:53 by ineumann         ###   ########.fr       */
+/*   Updated: 2022/01/19 19:38:42 by ineumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,21 +44,20 @@ void Karen::complain( std::string level )
 	{
 		case 0:
 			comp = &Karen::debug;
-			break;
+			(this->*comp)();
 		case 1:
 			comp = &Karen::info;
-			break;
+			(this->*comp)();
 		case 2:
 			comp = &Karen::warning;
-			break;
+			(this->*comp)();
 		case 3:
 			comp = &Karen::error;
+			(this->*comp)();
 			break;
 	}
 	if (!comp)
 		std::cout << level << ": Wrong argument" << std::endl;
-	else
-		(this->*comp)();
 }
 
 Karen::Karen()

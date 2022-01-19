@@ -1,43 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Karen.hpp                                          :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ineumann <ineumann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/18 18:47:20 by ineumann          #+#    #+#             */
-/*   Updated: 2022/01/19 18:58:21 by ineumann         ###   ########.fr       */
+/*   Created: 2022/01/18 18:47:18 by ineumann          #+#    #+#             */
+/*   Updated: 2022/01/19 19:29:29 by ineumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef KAREN_H
-# define KAREN_H
+#include "Karen.hpp"
 
-#include <iostream>
-#include <stdlib.h>
-#include <string>
-
-class Karen
+int	main(int argc, char **argv)
 {
-	public:
-	Karen();
-	~Karen();
-	void complain( std::string level );
-	void (Karen::*comp)(void);
+	Karen	k;
 
-	private:
-	void debug( void );
-	void info( void );
-	void warning( void );
-	void error( void );
-};
+	if (argc != 2)
+	{
+		std::cout << "Es necesario un solo argumento con el nivel de alerta \"debug\", \"info\", \"warning\" o \"error\"";
+		return(1);
+	}
+	k = Karen();
+	k.complain((std::string)argv[1]);
 
-/*
-*** main.cpp
-*/
-
-/*
-*** Karen.cpp
-*/
-
-#endif
+	return(0);
+}
