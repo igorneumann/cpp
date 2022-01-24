@@ -6,7 +6,7 @@
 /*   By: ineumann <ineumann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/18 18:47:20 by ineumann          #+#    #+#             */
-/*   Updated: 2022/01/19 18:58:21 by ineumann         ###   ########.fr       */
+/*   Updated: 2022/01/19 20:21:17 by ineumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,13 +31,5 @@ class Karen
 	void warning( void );
 	void error( void );
 };
-
-/*
-*** main.cpp
-*/
-
-/*
-*** Karen.cpp
-*/
 
 #endif

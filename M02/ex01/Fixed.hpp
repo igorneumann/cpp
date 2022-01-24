@@ -1,32 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ineumann <ineumann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/08 08:18:27 by igorneumann       #+#    #+#             */
-/*   Updated: 2022/01/20 19:29:01 by ineumann         ###   ########.fr       */
+/*   Created: 2022/01/19 20:20:32 by ineumann          #+#    #+#             */
+/*   Updated: 2022/01/24 17:39:45 by ineumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#ifndef KAREN_H
+# define KAREN_H
 
-int	main(int argc, char **argv)
+#include <iostream>
+#include <stdlib.h>
+#include <string>
+
+class Fixed
 {
-	Zombie	*z;
-	int		i = 0;
-	int		zb = 0;
+	public:
+	Fixed();
+	Fixed (const Fixed &fixed);
+	~Fixed();
+	Fixed & operator = (const Fixed &fixed);
+	int getRawBits( void ) const;
+	void setRawBits( int const raw ); 
+	float toFloat( void ) const;
+	int toInt( void ) const;
 
-	if (argc != 3)
-	{
-		std::cout << "2 argumentos, primer  el numero de Zombies, sergundo su nombre";
-		return(0);
-	}
-	zb = atoi(argv[1]);
-	z = zombieHorde( zb, argv[2]);
-	while (i < zb)
-		z[i++].announce();
-	delete[] z;
-	return(0);
-}
+	private:
+	int	fpi;
+	static const int bit;
+};
+
+#endif

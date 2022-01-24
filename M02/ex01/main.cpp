@@ -5,28 +5,23 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ineumann <ineumann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/08 08:18:27 by igorneumann       #+#    #+#             */
-/*   Updated: 2022/01/20 19:29:01 by ineumann         ###   ########.fr       */
+/*   Created: 2022/01/19 20:20:29 by ineumann          #+#    #+#             */
+/*   Updated: 2022/01/20 19:33:07 by ineumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include "Fixed.hpp"
 
-int	main(int argc, char **argv)
+int main( void ) 
 {
-	Zombie	*z;
-	int		i = 0;
-	int		zb = 0;
+	Fixed a;
+	Fixed b( a );
+	Fixed c;
 
-	if (argc != 3)
-	{
-		std::cout << "2 argumentos, primer  el numero de Zombies, sergundo su nombre";
-		return(0);
-	}
-	zb = atoi(argv[1]);
-	z = zombieHorde( zb, argv[2]);
-	while (i < zb)
-		z[i++].announce();
-	delete[] z;
-	return(0);
+	c = b;
+
+	std::cout << a.getRawBits() << std::endl;
+	std::cout << b.getRawBits() << std::endl;
+	std::cout << c.getRawBits() << std::endl;
+	return 0;
 }

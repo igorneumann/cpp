@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   samefile.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ineumann <ineumann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/14 18:36:22 by ineumann          #+#    #+#             */
-/*   Updated: 2022/01/20 19:27:01 by ineumann         ###   ########.fr       */
+/*   Updated: 2022/01/20 19:28:44 by ineumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,6 @@
 int domagic(const char* filename, std::string str1, std::string str2 )
 {
 	std::string line;
-	std::string append = ".replace";
-    std::string newfile = filename + append;
 	std::fstream file;
 	std::fstream fileout;
 	int i = -1;
@@ -30,7 +28,7 @@ int domagic(const char* filename, std::string str1, std::string str2 )
       std::cerr << "Error al abrir archivo: " << filename << std::endl;
       exit(1);
    	}
-	fileout.open(newfile, std::ifstream::out);
+	fileout.open(".temp.txt", std::ifstream::out);
 	if (!fileout)
 	{
 		std::cerr << "Error al crear archivo temporal" << std::endl;
@@ -49,6 +47,12 @@ int domagic(const char* filename, std::string str1, std::string str2 )
 	}
 	if (times == 0)
 		std::cout << "No hay" << std::endl;
+	else
+	{
+		remove(filename);
+		if (rename(".temp.txt", filename) != 0)
+			std::cerr << "Error al renombrar archivo temporal .temp.txt" << std::endl;
+	}
 	return (0);
 }
 

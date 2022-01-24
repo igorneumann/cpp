@@ -16,17 +16,17 @@ void ft_add (contact *cnt)
 
 void ft_search (contact	*cnt, int i)
 {
-	char 	com = 0;
+	std::string 	com;
 
-	while (com < 48 || com > (i + 48))
+	while (com[0] < 49 || com[0] > (i + 48) || com[1] != 0 )
 	{
 		ft_printl (cnt, i);
 		std::cout << "\nEnter the contact # you want to search" << std::endl;
 		std::cin >> com;
-		if (com < 48 || com > (i + 48))
+		if ( com[0] < 49 || com[0] > (i + 48) || com.length() != 1 )
 			std::cout << "\n Invalid contact #, try again." << std::endl;
 	}
-	cnt += (com - 49);
+	cnt += (com[0] - 49);
 	cnt->printc();
 }
 
@@ -34,7 +34,6 @@ void ft_printl (contact	*cnt, int i)
 {
 	int j = 0;
 
-	std::cout << "I IS: " << i;
 	std::cout << "\n#|FIRST NAME|LAST NAME | NICKNAME |  PHONE # | DARK SEC |" << std::endl;
 	while (j++ < i)
 	{
@@ -64,6 +63,7 @@ int	main ()
 	char 	*com = new char;
 	contact	cnt[8];
 	int	i = 0;
+	int j = 0;
 
 	while (strcmp(com, "EXIT"))
 	{
@@ -73,9 +73,11 @@ int	main ()
 		std::cin >> com;
 		if (!strcmp(com, "ADD"))
 		{
-			if (i < 8)
+			if (i != 8)
 				i++;
-			ft_add(&cnt[i - 1]);
+			ft_add(&cnt[j++]);
+			if (j > 7)
+				j = 0;
 		}
 		else if (!strcmp(com, "SEARCH"))
 		{
