@@ -6,7 +6,7 @@
 /*   By: ineumann <ineumann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/19 20:20:32 by ineumann          #+#    #+#             */
-/*   Updated: 2022/01/26 19:04:54 by ineumann         ###   ########.fr       */
+/*   Updated: 2022/01/26 19:57:38 by ineumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,11 +28,23 @@ class Fixed
 	Fixed (const float num);
 	~Fixed();
 	Fixed & operator = (const Fixed &fixed);
+	Fixed & operator > (const Fixed &fixed1, const Fixed &fixed2);
+	Fixed & operator < (const Fixed &fixed1, const Fixed &fixed2);
+	Fixed & operator >= (const Fixed &fixed1, const Fixed &fixed2);
+	Fixed & operator <= (const Fixed &fixed1, const Fixed &fixed2);
+	Fixed & operator == (const Fixed &fixed1, const Fixed &fixed2);
+	Fixed & operator != (const Fixed &fixed1, const Fixed &fixed2);
+	Fixed & operator + (const Fixed &fixed1, const Fixed &fixed2);
+	Fixed & operator - (const Fixed &fixed1, const Fixed &fixed2);
+	Fixed & operator * (const Fixed &fixed1, const Fixed &fixed2);
+	Fixed & operator / (const Fixed &fixed1, const Fixed &fixed2);
 	friend std::ostream &operator<<(std::ostream &out, const Fixed &value);
 	int getRawBits( void ) const;
 	void setRawBits( int const raw ); 
 	float toFloat( void ) const;
 	int toInt( void ) const;
+	Fixed min (const Fixed &fixed1, const Fixed &fixed2);
+	Fixed max (const Fixed &fixed1, const Fixed &fixed2);
 
 	private:
 	int	fpi;

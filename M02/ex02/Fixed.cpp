@@ -6,7 +6,7 @@
 /*   By: ineumann <ineumann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/19 20:20:34 by ineumann          #+#    #+#             */
-/*   Updated: 2022/01/26 19:34:14 by ineumann         ###   ########.fr       */
+/*   Updated: 2022/01/26 19:55:06 by ineumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,16 +45,6 @@ Fixed::~Fixed()
 	std::cout << "Destructor called" << std::endl;
 }
 
-Fixed & Fixed::operator = (const Fixed &fixed)
-{
-	if (this != &fixed)
-	{
-		std::cout << "Assignation operator called" << std::endl;
-		this->fpi = fixed.getRawBits();
-	}
-	return (*this);
-}
-
 int Fixed::getRawBits( void ) const
 {
 	return this->fpi;
@@ -81,4 +71,18 @@ int Fixed::toInt( void ) const
 {
 	int num = this->fpi >> this->bit;
 	return num;
+}
+
+Fixed Fixed::min (const Fixed &fixed1, const Fixed &fixed2)
+{
+	Fixed answer;
+	answer = (fixed1 < fixed2) ? fixed1 : fixed2;
+	return answer;
+}
+
+Fixed Fixed::max (const Fixed &fixed1, const Fixed &fixed2)
+{
+	Fixed answer;
+	answer = (fixed1 > fixed2) ? fixed1 : fixed2;
+	return answer;
 }
