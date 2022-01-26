@@ -6,7 +6,7 @@
 /*   By: ineumann <ineumann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/19 20:20:34 by ineumann          #+#    #+#             */
-/*   Updated: 2022/01/26 19:55:06 by ineumann         ###   ########.fr       */
+/*   Updated: 2022/01/26 20:24:51 by ineumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,14 +73,14 @@ int Fixed::toInt( void ) const
 	return num;
 }
 
-Fixed Fixed::min (const Fixed &fixed1, const Fixed &fixed2)
+Fixed Fixed::min (Fixed &fixed1, const Fixed &fixed2)
 {
 	Fixed answer;
 	answer = (fixed1 < fixed2) ? fixed1 : fixed2;
 	return answer;
 }
 
-Fixed Fixed::max (const Fixed &fixed1, const Fixed &fixed2)
+Fixed Fixed::max (Fixed &fixed1, const Fixed &fixed2)
 {
 	Fixed answer;
 	answer = (fixed1 > fixed2) ? fixed1 : fixed2;

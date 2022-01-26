@@ -6,13 +6,13 @@
 /*   By: ineumann <ineumann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 19:48:22 by ineumann          #+#    #+#             */
-/*   Updated: 2022/01/26 20:10:23 by ineumann         ###   ########.fr       */
+/*   Updated: 2022/01/26 20:23:17 by ineumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 
-Fixed & Fixed::operator = (const Fixed &fixed1)
+Fixed & Fixed::operator = (const Fixed &fixed)
 {
 	if (this != &fixed)
 	{
@@ -22,80 +22,68 @@ Fixed & Fixed::operator = (const Fixed &fixed1)
 	return (*this);
 }
 
-int & Fixed::operator > (const Fixed &fixed1, const Fixed &fixed2)
+int & Fixed::operator > (const Fixed &fixed)
 {
 	int i;
-	i = (fixed1.getRawBits() > fixed2.getRawBits()) ? 1 : 0;
+	i = (this->getRawBits() > fixed.getRawBits()) ? 1 : 0;
 	return (i);
 }
 
-int & Fixed::operator < (const Fixed &fixed1, const Fixed &fixed2)
+int & Fixed::operator < (const Fixed &fixed)
 {
 	int i;
-	i = (fixed1.getRawBits() < fixed2.getRawBits()) ? 1 : 0;
+	i = (this->getRawBits() < fixed.getRawBits()) ? 1 : 0;
 	return (i);
 }
 
-int & Fixed::operator >= (const Fixed &fixed1, const Fixed &fixed2)
+int & Fixed::operator >= (const Fixed &fixed)
 {
 	int i;
-	i = (fixed1.getRawBits() >= fixed2.getRawBits()) ? 1 : 0;
+	i = (this->getRawBits() >= fixed.getRawBits()) ? 1 : 0;
 	return (i);
 }
 
-int & Fixed::operator <= (const Fixed &fixed1, const Fixed &fixed2)
+int & Fixed::operator <= (const Fixed &fixed)
 {
 	int i;
-	i = (fixed1.getRawBits() <= fixed2.getRawBits()) ? 1 : 0;
+	i = (this->getRawBits() <= fixed.getRawBits()) ? 1 : 0;
 	return (i);
 }
 
-int & Fixed::operator == (const Fixed &fixed1, const Fixed &fixed2)
+int & Fixed::operator == (const Fixed &fixed)
 {
 	int i;
-	i = (fixed1.getRawBits() == fixed2.getRawBits()) ? 1 : 0;
+	i = (this->getRawBits() == fixed.getRawBits()) ? 1 : 0;
 	return (i);
 }
 
-int & Fixed::operator != (const Fixed &fixed1, const Fixed &fixed2)
+int & Fixed::operator != (const Fixed &fixed)
 {
 	int i;
-	i = (fixed1.getRawBits() != fixed2.getRawBits()) ? 1 : 0;
+	i = (this->getRawBits() != fixed.getRawBits()) ? 1 : 0;
 	return (i);
 }
 
-Fixed & Fixed::operator + (const Fixed &fixed1, const Fixed &fixed2)
+Fixed & Fixed::operator + (const Fixed &fixed)
 {
-	if (this != &fixed1 && this != &fixed2)
-	{
-		this->fpi = (fixed1.getRawBits() + fixed2.getRawBits());
-	}
+	this->fpi = (this->getRawBits() + fixed.getRawBits());
 	return (*this);
 }
 
-Fixed & Fixed::operator - (const Fixed &fixed1, const Fixed &fixed2)
+Fixed & Fixed::operator - (const Fixed &fixed)
 {
-	if (this != &fixed1 && this != &fixed2)
-	{
-		this->fpi = (fixed1.getRawBits() - fixed2.getRawBits());
-	}
+	this->fpi = (this->getRawBits() - fixed.getRawBits());
 	return (*this);
 }
 
-Fixed & Fixed::operator * (const Fixed &fixed1, const Fixed &fixed2)
+Fixed & Fixed::operator * (const Fixed &fixed)
 {
-	if (this != &fixed1 && this != &fixed2)
-	{
-		this->fpi = (fixed1.getRawBits() * fixed2.getRawBits());
-	}
+	this->fpi = (this->getRawBits() * fixed.getRawBits());
 	return (*this);
 }
 
-Fixed & Fixed::operator / (const Fixed &fixed1, const Fixed &fixed2)
+Fixed & Fixed::operator / (const Fixed &fixed)
 {
-	if (this != &fixed1 && this != &fixed2)
-	{
-		this->fpi = (fixed1.getRawBits() / fixed2.getRawBits());
-	}
+	this->fpi = (this->getRawBits() / fixed.getRawBits());
 	return (*this);
 }
