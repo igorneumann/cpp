@@ -6,12 +6,12 @@
 /*   By: ineumann <ineumann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/19 20:20:32 by ineumann          #+#    #+#             */
-/*   Updated: 2022/01/20 19:53:33 by ineumann         ###   ########.fr       */
+/*   Updated: 2022/01/24 20:43:29 by ineumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef KAREN_H
-# define KAREN_H
+#ifndef FIXED_H
+# define FIXED_H
 
 #include <iostream>
 #include <stdlib.h>

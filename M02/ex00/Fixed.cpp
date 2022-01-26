@@ -6,7 +6,7 @@
 /*   By: ineumann <ineumann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/19 20:20:34 by ineumann          #+#    #+#             */
-/*   Updated: 2022/01/20 19:57:45 by ineumann         ###   ########.fr       */
+/*   Updated: 2022/01/26 19:14:18 by ineumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,11 @@ Fixed::Fixed()
 
 Fixed::Fixed(const Fixed &fixed)
 {
-	std::cout << "Copy constructor called" << std::endl;
-	this->setRawBits(fixed.getRawBits());
+	if (this != &fixed)
+	{
+		std::cout << "Copy constructor called" << std::endl;
+		this->setRawBits(fixed.getRawBits());
+	}
 }
 
 Fixed::~Fixed()
