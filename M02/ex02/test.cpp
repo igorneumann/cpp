@@ -43,7 +43,6 @@ main(void)
     xassert(true == (a == a));
     xassert(false == (b == a));
     xassert(true == (b == b));
-
     xassert(16 == (a + a).toInt());
     xassert(24 == (a + b).toInt());
     xassert(24 == (b + a).toInt());
@@ -80,6 +79,9 @@ main(void)
     xassert(1 == (b / b).toInt());
 
     xassert(1.0 == (a / a).toFloat());
+	std::cout << a << std::endl;
+	std::cout << b << std::endl;
+	std::cout << (a / b).toFloat() << std::endl;
     xassert(0.5 == (a / b).toFloat());
     xassert(2.0 == (b / a).toFloat());
     xassert(1.0 == (b / b).toFloat());
