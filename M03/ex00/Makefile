@@ -6,12 +6,12 @@
 #    By: ineumann <ineumann@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/19 20:19:58 by ineumann          #+#    #+#              #
-#    Updated: 2022/02/01 17:58:51 by ineumann         ###   ########.fr        #
+#    Updated: 2022/02/01 18:03:44 by ineumann         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME			=	Fixed
-SRCS			=	main.cpp Fixed.cpp operators.cpp
+SRCS			=	ClapTrap.cpp ClapTrap.hpp main.cpp
 OBJS			=	$(SRCS:.cpp=.o)
 CC				=	@g++ -g -Wall -Wextra -Werror -std=c++98
 

@@ -6,7 +6,7 @@
 /*   By: ineumann <ineumann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 19:48:22 by ineumann          #+#    #+#             */
-/*   Updated: 2022/01/28 19:57:33 by ineumann         ###   ########.fr       */
+/*   Updated: 2022/02/01 17:58:03 by ineumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,7 @@ Fixed Fixed::operator ++ (int)
 {
 //	std::cout << "post++ operator called" << std::endl;
 	Fixed temp(*this);
-	temp.fpi++;
+	this->fpi++;
 	return (temp);
 }
 
@@ -88,7 +88,7 @@ Fixed Fixed::operator -- (int)
 {
 //	std::cout << "post-- operator called" << std::endl;
 	Fixed temp(*this);
-	temp.fpi--;
+	this->fpi--;
 	return (temp);
 }
 
@@ -126,6 +126,6 @@ Fixed Fixed::operator / (const Fixed &fixed)
 {
 //	std::cout << "/ operator called" << std::endl;
 	Fixed temp;
-	temp.setRawBits((int64_t)this->getRawBits() / (int64_t)fixed.getRawBits() * (1 << 8));
+	temp.setRawBits(((int64_t)this->getRawBits() * (1 << 8)) / (int64_t)fixed.getRawBits());
 	return (temp);
 }

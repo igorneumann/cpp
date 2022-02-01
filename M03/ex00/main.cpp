@@ -5,24 +5,27 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ineumann <ineumann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/19 20:20:29 by ineumann          #+#    #+#             */
-/*   Updated: 2022/02/01 18:00:38 by ineumann         ###   ########.fr       */
+/*   Created: 2022/02/01 19:04:54 by ineumann          #+#    #+#             */
+/*   Updated: 2022/02/01 20:03:24 by ineumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Fixed.hpp"
+#include "ClapTrap.hpp"
 
 int main( void ) 
 { 
-	Fixed a;
-	Fixed const b( Fixed( 5.05f ) * Fixed( 2 ) );
+	ClapTrap *ct1;
+	ClapTrap *ct2;
 
-	std::cout << a << std::endl;
-	std::cout << ++a << std::endl;
-	std::cout << a << std::endl;
-	std::cout << a++ << std::endl;
-	std::cout << a << std::endl;
-	std::cout << b << std::endl;
-	std::cout << Fixed::max( a, b ) << std::endl;
-	return 0;
+	ct1 = new ClapTrap("Igor");
+	ct2 = new ClapTrap("Fernando");
+	ct1->attack("Fernando");
+	ct1->takeDamage(5);
+	ct1->beRepaired(5);
+	ct2->attack("Igor");
+	ct2->takeDamage(5);
+	ct2->beRepaired(5);
+	delete ct1;
+	delete ct2;
+	return(0);
 }

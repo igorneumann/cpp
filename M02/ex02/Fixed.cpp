@@ -6,7 +6,7 @@
 /*   By: ineumann <ineumann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/19 20:20:34 by ineumann          #+#    #+#             */
-/*   Updated: 2022/01/28 18:54:40 by ineumann         ###   ########.fr       */
+/*   Updated: 2022/02/01 17:49:51 by ineumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ void Fixed::setRawBits( int const raw )
 
 float Fixed::toFloat( void ) const
 {
-	std::cout << "tofloat called for " << this->fpi << std::endl;
+//	std::cout << "tofloat called for " << this->fpi << std::endl;
 	float num = ((float)this->fpi) / (1 << this->bit);
 	return num;
 }

@@ -1,28 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   ClapTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ineumann <ineumann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/19 20:20:29 by ineumann          #+#    #+#             */
-/*   Updated: 2022/02/01 18:00:38 by ineumann         ###   ########.fr       */
+/*   Created: 2022/02/01 18:05:07 by ineumann          #+#    #+#             */
+/*   Updated: 2022/02/01 19:03:16 by ineumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Fixed.hpp"
+#ifndef CLAPTRAP_H
+# define CLAPTRAP_H
 
-int main( void ) 
-{ 
-	Fixed a;
-	Fixed const b( Fixed( 5.05f ) * Fixed( 2 ) );
+#include <iostream>
+#include <stdlib.h>
+#include <string>
 
-	std::cout << a << std::endl;
-	std::cout << ++a << std::endl;
-	std::cout << a << std::endl;
-	std::cout << a++ << std::endl;
-	std::cout << a << std::endl;
-	std::cout << b << std::endl;
-	std::cout << Fixed::max( a, b ) << std::endl;
-	return 0;
-}
+class ClapTrap
+{
+	public:
+
+	void attack(std::string const & target);
+	void takeDamage(unsigned int amount);
+	void beRepaired(unsigned int amount);
+
+	private:
+	std::string name;
+	int hitpoints;
+	int enpoints;
+	int atdamage;
+};
+
+#endif
