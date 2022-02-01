@@ -2,16 +2,18 @@
 
 void ft_add (contact *cnt)
 {
+	std::string buff;
+
 	std::cout << "Please enter the first name:" << std::endl;
-	std::cin >> cnt->fname;
+	getline(std::cin, cnt->fname);
 	std::cout << "Please enter the last name:" << std::endl;
-	std::cin >> cnt->lname;
+	getline(std::cin, cnt->lname);
 	std::cout << "Please enter the nickname:" << std::endl;
-	std::cin >> cnt->nick;
+	getline(std::cin, cnt->nick);
 	std::cout << "Please enter the phone number:" << std::endl;
-	std::cin >> cnt->phone;
+	getline(std::cin, cnt->phone);
 	std::cout << "Please reveal your darkest secret:" << std::endl;
-	std::cin >> cnt->secret;
+	getline(std::cin, cnt->secret);
 }
 
 void ft_search (contact	*cnt, int i)
@@ -22,7 +24,7 @@ void ft_search (contact	*cnt, int i)
 	{
 		ft_printl (cnt, i);
 		std::cout << "\nEnter the contact # you want to search" << std::endl;
-		std::cin >> com;
+		getline(std::cin, com);
 		if ( com[0] < 49 || com[0] > (i + 48) || com.length() != 1 )
 			std::cout << "\n Invalid contact #, try again." << std::endl;
 	}
@@ -60,18 +62,18 @@ std::string tench(std::string input)
 
 int	main ()
 {
-	char 	*com = new char;
+	std::string com;
 	contact	cnt[8];
 	int	i = 0;
 	int j = 0;
 
-	while (strcmp(com, "EXIT"))
+	while (com != "EXIT")
 	{
 		com = new char;
 		std::cout << "WELCOME TO MY AWESOME PHONEBOOK\n";
 		std::cout << "ADD, SEARCH or EXIT?" << std::endl;
-		std::cin >> com;
-		if (!strcmp(com, "ADD"))
+		getline(std::cin, com);
+		if (com == "ADD")
 		{
 			if (i != 8)
 				i++;
@@ -79,7 +81,7 @@ int	main ()
 			if (j > 7)
 				j = 0;
 		}
-		else if (!strcmp(com, "SEARCH"))
+		else if (com == "SEARCH")
 		{
 			if (i > 0)
 				ft_search(cnt, i);
