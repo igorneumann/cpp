@@ -6,11 +6,11 @@
 #    By: ineumann <ineumann@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/19 20:19:58 by ineumann          #+#    #+#              #
-#    Updated: 2022/02/01 18:03:44 by ineumann         ###   ########.fr        #
+#    Updated: 2022/02/02 19:14:06 by ineumann         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME			=	Fixed
+NAME			=	ClapTrap
 SRCS			=	ClapTrap.cpp ClapTrap.hpp main.cpp
 OBJS			=	$(SRCS:.cpp=.o)
 CC				=	@g++ -g -Wall -Wextra -Werror -std=c++98
@@ -18,7 +18,7 @@ CC				=	@g++ -g -Wall -Wextra -Werror -std=c++98
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	$(CC) $(SRCS) -o $(NAME)
+	$(CC) $(SRCS) 
 
 clean:
 	@rm -f $(OBJS)

@@ -6,7 +6,7 @@
 /*   By: ineumann <ineumann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/01 18:05:07 by ineumann          #+#    #+#             */
-/*   Updated: 2022/02/01 19:03:16 by ineumann         ###   ########.fr       */
+/*   Updated: 2022/02/02 18:31:12 by ineumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,16 +20,17 @@
 class ClapTrap
 {
 	public:
-
+	ClapTrap(std::string name);
+	~ClapTrap(void);
 	void attack(std::string const & target);
 	void takeDamage(unsigned int amount);
 	void beRepaired(unsigned int amount);
 
 	private:
 	std::string name;
-	int hitpoints;
-	int enpoints;
-	int atdamage;
+	unsigned int hitpoints;
+	unsigned int enpoints;
+	unsigned int atdamage;
 };
 
 #endif
