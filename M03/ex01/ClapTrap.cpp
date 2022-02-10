@@ -6,11 +6,15 @@
 /*   By: ineumann <ineumann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/01 18:05:13 by ineumann          #+#    #+#             */
-/*   Updated: 2022/02/04 18:28:58 by ineumann         ###   ########.fr       */
+/*   Updated: 2022/02/07 19:21:29 by ineumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
+
+ClapTrap::ClapTrap ()
+{
+}
 
 ClapTrap::ClapTrap ( std::string name )
 {
@@ -35,6 +39,22 @@ ClapTrap::~ClapTrap ( void )
 	std::cout << "ClapTrap " << this->name << " DIED" << std::endl;
 }
 
+ClapTrap::ClapTrap(const ClapTrap &ClapTrap)
+{
+	//std::cout << "Copy constructor called" << std::endl;
+	*this = ClapTrap;
+}
+
+ClapTrap & ClapTrap::operator = (const ClapTrap &ClapTrap)
+{
+	if (this != &ClapTrap)
+	{
+		//std::cout << "Assignation operator called" << std::endl;
+		this->name = ClapTrap.getname();
+	}
+	return (*this);
+}
+
 void ClapTrap::attack(std::string const & target)
 {
 	std::cout << "ClapTrap " << this->name << " attack " << target << ", causing " << this->atdamage << " points of damage!" << std::endl;
@@ -52,3 +72,12 @@ void ClapTrap::beRepaired(unsigned int amount)
 	this->hitpoints += amount;
 }
 
+std::string ClapTrap::getname( void ) const
+{
+	return this->name;
+}
+
+void ClapTrap::setname( std::string nm )
+{
+	this->name = nm;
+}

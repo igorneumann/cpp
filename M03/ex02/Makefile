@@ -6,19 +6,19 @@
 #    By: ineumann <ineumann@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/19 20:19:58 by ineumann          #+#    #+#              #
-#    Updated: 2022/02/04 19:47:37 by ineumann         ###   ########.fr        #
+#    Updated: 2022/02/08 17:40:15 by ineumann         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME			=	Fraptrap
-SRCS			=	FrapTrap.cpp FrapTrap.hpp ScavTrap.cpp ScavTrap.hpp ClapTrap.hpp ClapTrap.cpp main.cpp
+NAME			=	Fragtrap
+SRCS			=	FragTrap.cpp ScavTrap.cpp ClapTrap.cpp main.cpp
 OBJS			=	$(SRCS:.cpp=.o)
 CC				=	@g++ -g -Wall -Wextra -Werror -std=c++98
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	$(CC) $(SRCS) 
+	$(CC) $(SRCS) -o $(NAME)
 
 clean:
 	@rm -f $(OBJS)

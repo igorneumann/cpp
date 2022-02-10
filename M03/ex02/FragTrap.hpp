@@ -6,12 +6,12 @@
 /*   By: ineumann <ineumann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/01 18:05:07 by ineumann          #+#    #+#             */
-/*   Updated: 2022/02/04 19:46:08 by ineumann         ###   ########.fr       */
+/*   Updated: 2022/02/08 19:08:31 by ineumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FRAGTRAP_H
-# define SCAVTRAP_H
+# define FRAGTRAP_H
 
 #include <iostream>
 #include <stdlib.h>
@@ -22,15 +22,18 @@
 class FragTrap : public ClapTrap
 {
 	public:
-	FragTrap(std::string name);
-	~FragTrap(void);
-	void attack(std::string const & target);
-	void takeDamage(unsigned int amount);
-	void beRepaired(unsigned int amount);
-	void highFivesGuys();
 
-	private:
-	std::string name;
+		FragTrap();
+		FragTrap(std::string name);
+		FragTrap (const FragTrap &FragTrap);
+		virtual ~FragTrap(void);
+		FragTrap & operator = (const FragTrap &FragTrap);
+		void attack(std::string const & target);
+		void takeDamage(unsigned int amount);
+		void beRepaired(unsigned int amount);
+		std::string getname( void ) const;
+		void setname( std::string nm );
+		void highFivesGuys();
 };
 
 
