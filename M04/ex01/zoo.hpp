@@ -6,7 +6,7 @@
 /*   By: ineumann <ineumann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 17:20:52 by ineumann          #+#    #+#             */
-/*   Updated: 2022/02/10 19:52:31 by ineumann         ###   ########.fr       */
+/*   Updated: 2022/02/10 19:58:08 by ineumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,8 @@ class Dog : public Animal, private Brain
 		std::string getType( void ) const;
 		void setType(std::string type);
 		void makeSound( void ) const;
+		std::string getIdea( int id ) const;
+		void setIdea( std::string cnt, int id );
 
 	private:
 };

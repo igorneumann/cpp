@@ -6,7 +6,7 @@
 /*   By: ineumann <ineumann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 17:36:55 by ineumann          #+#    #+#             */
-/*   Updated: 2022/02/10 18:40:08 by ineumann         ###   ########.fr       */
+/*   Updated: 2022/02/10 20:00:36 by ineumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,16 @@ void Dog::makeSound( void ) const
 	this->Animal::makeSound();
 }
 
+std::string Dog::getIdea( int id ) const
+{
+	return this->Brain::getIdea(id);
+}
+
+void Dog::setIdea( std::string cnt, int id )
+{
+	this->Brain::setIdea(cnt, id);
+}
+
 Cat::Cat () : Animal("Cat")
 {
 	std::cout << "A Cat started meowing!" << std::endl;
@@ -92,4 +102,14 @@ std::string Cat::getType( void ) const
 void Cat::makeSound( void ) const
 {
 	this->Animal::makeSound();
+}
+
+std::string Cat::getIdea( int id ) const
+{
+	return this->Brain::getIdea(id);
+}
+
+void Cat::setIdea( std::string cnt, int id )
+{
+	this->Brain::setIdea(cnt, id);
 }
