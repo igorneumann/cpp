@@ -6,7 +6,7 @@
 /*   By: igorneumann <igorneumann@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 17:19:31 by ineumann          #+#    #+#             */
-/*   Updated: 2022/02/11 10:53:20 by igorneumann      ###   ########.fr       */
+/*   Updated: 2022/02/11 09:14:25 by igorneumann      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,12 @@ int main()
 	int j = 0;
 	Animal* k[10];
 	Animal* l[10];
+	//Animal* m;
 	std::string think;
 	
 	std::cout << "Creating a bunch of sh*t" << std::endl;
+	//m = new Animal();
+	//m->makeSound();
 	while (i < 5)
 	{
 		k[i] = new Dog();
@@ -47,18 +50,6 @@ int main()
 		}
 		j++;
 	}
-	std::cout << "Spitting shitty thoughts" << std::endl;
-	j = 0;
-	i = 0;
-	while (j < 10)
-	{
-		while (i < 90)
-		{
-			std::cout << k[j]->getIdea(i) << std::endl;
-			i++;
-		}
-		j++;
-	}
 	std::cout << "Copying array" << std::endl;
 	j = 0;
 	while (j < 10)
@@ -66,7 +57,7 @@ int main()
 		l[j] = k[j];
 		j++;
 	}
-	std::cout << "Spitting shitty copy thoughts" << std::endl;
+	std::cout << "Spitting shitty thoughts" << std::endl;
 	j = 0;
 	i = 0;
 	while (j < 10)
@@ -78,7 +69,6 @@ int main()
 		}
 		j++;
 	}
-	std::cout << "Making some noise" << std::endl;
 	j = 0;
 	while (j < 10)
 	{
@@ -86,11 +76,11 @@ int main()
 		k[j]->makeSound();
 		j++;
 	}
-	std::cout << "Killing them with fire!" << std::endl;
 	j = 10;
 	while (j-- > 0)
 	{
 		delete k[j];
-		//delete l[j];
+		delete l[j];
+	//	delete m;
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: igorneumann <igorneumann@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 17:20:52 by ineumann          #+#    #+#             */
-/*   Updated: 2022/02/11 10:18:16 by igorneumann      ###   ########.fr       */
+/*   Updated: 2022/02/11 09:13:18 by igorneumann      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,8 +44,8 @@ class Animal
 		std::string getType( void ) const;
 		void setType(std::string type);
 		void makeSound( void ) const;
-		virtual std::string getIdea( int id ) const;
-		virtual void setIdea( std::string cnt, int id );
+		virtual std::string getIdea( int id ) const = 0;
+		virtual void setIdea( std::string cnt, int id ) = 0;
 
 
 	private:
@@ -53,7 +53,7 @@ class Animal
 		std::string type;
 };
 
-class Dog : public Animal
+class Dog : public Animal, private Brain
 {
 	public:
 
@@ -68,10 +68,9 @@ class Dog : public Animal
 		void setIdea( std::string cnt, int id );
 
 	private:
-		Brain	*brain;
 };
 
-class Cat : public Animal
+class Cat : public Animal, private Brain
 {
 	public:
 
@@ -85,9 +84,7 @@ class Cat : public Animal
 		std::string getIdea( int id ) const;
 		void setIdea( std::string cnt, int id );
 
-
 	private:
-		Brain	*brain;
 };
 
 #endif
