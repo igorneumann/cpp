@@ -6,7 +6,7 @@
 /*   By: igorneumann <igorneumann@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 17:20:52 by ineumann          #+#    #+#             */
-/*   Updated: 2022/02/11 09:13:18 by igorneumann      ###   ########.fr       */
+/*   Updated: 2022/02/16 08:12:20 by igorneumann      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ class Animal
 		std::string type;
 };
 
-class Dog : public Animal, private Brain
+class Dog : public Animal
 {
 	public:
 
@@ -68,9 +68,10 @@ class Dog : public Animal, private Brain
 		void setIdea( std::string cnt, int id );
 
 	private:
+		Brain	*brain;
 };
 
-class Cat : public Animal, private Brain
+class Cat : public Animal
 {
 	public:
 
@@ -84,7 +85,9 @@ class Cat : public Animal, private Brain
 		std::string getIdea( int id ) const;
 		void setIdea( std::string cnt, int id );
 
+
 	private:
+		Brain	*brain;
 };
 
 #endif

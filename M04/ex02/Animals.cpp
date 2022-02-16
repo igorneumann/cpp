@@ -6,7 +6,7 @@
 /*   By: igorneumann <igorneumann@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 17:36:55 by ineumann          #+#    #+#             */
-/*   Updated: 2022/02/16 08:24:48 by igorneumann      ###   ########.fr       */
+/*   Updated: 2022/02/11 10:55:14 by igorneumann      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,4 +73,14 @@ std::string Animal::getType( void ) const
 void Animal::setType( std::string type )
 {
 	this->type = type;
+}
+
+std::string Animal::getIdea( int id ) const
+{
+	return this->Animal::getIdea(id);
+}
+
+void Animal::setIdea( std::string cnt, int id )
+{
+	this->Animal::setIdea(cnt, id);
 }

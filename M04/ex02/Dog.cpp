@@ -1,28 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   zoo.cpp                                            :+:      :+:    :+:   */
+/*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: igorneumann <igorneumann@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 17:36:55 by ineumann          #+#    #+#             */
-/*   Updated: 2022/02/11 09:24:48 by igorneumann      ###   ########.fr       */
+/*   Updated: 2022/02/15 08:16:53 by igorneumann      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "zoo.hpp"
 
-Dog::Dog () : Animal("Dog")
+Dog::Dog () : Animal("Dog"), brain(new Brain)
 {
 	std::cout << "A Dog started woofing!" << std::endl;
 }
 
 Dog::~Dog ( void )
 {
+	delete this->brain;
 	std::cout << "No more Woofs from this one..." << std::endl;
 }
 
-Dog::Dog(const Dog &Dog) : Animal(Dog) , Brain((Brain)Dog)
+Dog::Dog(const Dog &Dog) : Animal("Dog")
 {
 	//std::cout << "Copy constructor called" << std::endl;
 	*this = Dog;
@@ -33,7 +34,8 @@ Dog & Dog::operator = (const Dog &Dog)
 	if (this != &Dog)
 	{
 		//std::cout << "Assignation operator called" << std::endl;
-		this->setType(Dog.Animal::getType());
+		this->brain = new Brain(*(Dog.brain));
+		this->setType("Dog");
 	}
 	return (*this);
 }
@@ -55,61 +57,10 @@ void Dog::makeSound( void ) const
 
 std::string Dog::getIdea( int id ) const
 {
-	return this->Brain::getIdea(id);
+	return this->brain->getIdea(id);
 }
 
 void Dog::setIdea( std::string cnt, int id )
 {
-	this->Brain::setIdea(cnt, id);
-}
-
-Cat::Cat () : Animal("Cat")
-{
-	std::cout << "A Cat started meowing!" << std::endl;
-}
-
-Cat::~Cat ( void )
-{
-	std::cout << "No more meows from this one..." << std::endl;
-}
-
-Cat::Cat(const Cat &Cat) : Animal(Brain((Brain)Cat))
-{
-	//std::cout << "Copy constructor called" << std::endl;
-	*this = Cat;
-}
-
-Cat & Cat::operator = (const Cat &Cat)
-{
-	if (this != &Cat)
-	{
-		//std::cout << "Assignation operator called" << std::endl;
-		this->setType(Cat.Animal::getType());
-	}
-	return (*this);
-}
-
-void Cat::setType( std::string type )
-{
-	this->Animal::setType(type);
-}
-
-std::string Cat::getType( void ) const
-{
-	return this->Animal::getType();
-}
-
-void Cat::makeSound( void ) const
-{
-	this->Animal::makeSound();
-}
-
-std::string Cat::getIdea( int id ) const
-{
-	return this->Brain::getIdea(id);
-}
-
-void Cat::setIdea( std::string cnt, int id )
-{
-	this->Brain::setIdea(cnt, id);
+	this->brain->setIdea(cnt, id);
 }

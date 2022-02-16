@@ -6,12 +6,12 @@
 #    By: igorneumann <igorneumann@student.42.fr>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/19 20:19:58 by ineumann          #+#    #+#              #
-#    Updated: 2022/02/15 08:04:12 by igorneumann      ###   ########.fr        #
+#    Updated: 2022/02/16 09:09:37 by igorneumann      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME			=	zoo
-SRCS			=	main.cpp Dog.cpp Cat.cpp Brain.cpp Animals.cpp
+NAME			=	AMateria
+SRCS			=	main.cpp cure.cpp ice.cpp
 OBJS			=	$(SRCS:.cpp=.o)
 CC				=	@g++ -g -Wall -Wextra -Werror -std=c++98 -fsanitize=address
 

@@ -6,7 +6,7 @@
 /*   By: igorneumann <igorneumann@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 17:19:31 by ineumann          #+#    #+#             */
-/*   Updated: 2022/02/11 10:53:20 by igorneumann      ###   ########.fr       */
+/*   Updated: 2022/02/15 08:12:10 by igorneumann      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,9 +61,14 @@ int main()
 	}
 	std::cout << "Copying array" << std::endl;
 	j = 0;
+	while (j < 5)
+	{
+		l[j] = new Dog(*(Dog *)k[j]);
+		j++;
+	}
 	while (j < 10)
 	{
-		l[j] = k[j];
+		l[j] = new Cat(*(Cat *)k[j]);
 		j++;
 	}
 	std::cout << "Spitting shitty copy thoughts" << std::endl;
@@ -91,6 +96,6 @@ int main()
 	while (j-- > 0)
 	{
 		delete k[j];
-		//delete l[j];
+		delete l[j];
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: igorneumann <igorneumann@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 17:36:55 by ineumann          #+#    #+#             */
-/*   Updated: 2022/02/11 10:50:27 by igorneumann      ###   ########.fr       */
+/*   Updated: 2022/02/16 07:45:36 by igorneumann      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,9 +48,11 @@ Brain & Brain::operator = (const Brain &Brain)
 	if (this != &Brain)
 	{
 		while (i < 100)
-		//std::cout << "Assignation operator called" << std::endl;
-		this->idea[i] = Brain.getIdea(i);
-		i++;
+		{
+			// std::cout << "Assignation operator called" << i << std::endl;
+			this->idea[i] = Brain.getIdea(i);
+			i++;
+		}
 	}
 	return (*this);
 }

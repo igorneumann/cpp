@@ -3,17 +3,17 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: ineumann <ineumann@student.42.fr>          +#+  +:+       +#+         #
+#    By: igorneumann <igorneumann@student.42.fr>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/19 20:19:58 by ineumann          #+#    #+#              #
-#    Updated: 2022/02/10 17:43:00 by ineumann         ###   ########.fr        #
+#    Updated: 2022/02/15 08:04:12 by igorneumann      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME			=	zoo
-SRCS			=	main.cpp zoo.cpp zoo_parts.cpp
+SRCS			=	main.cpp Dog.cpp Cat.cpp Brain.cpp Animals.cpp
 OBJS			=	$(SRCS:.cpp=.o)
-CC				=	@g++ -g -Wall -Wextra -Werror -std=c++98
+CC				=	@g++ -g -Wall -Wextra -Werror -std=c++98 -fsanitize=address
 
 all: $(NAME)
 
