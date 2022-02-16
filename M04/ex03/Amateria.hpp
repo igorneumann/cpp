@@ -6,7 +6,7 @@
 /*   By: igorneumann <igorneumann@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 17:20:52 by ineumann          #+#    #+#             */
-/*   Updated: 2022/02/16 11:10:54 by igorneumann      ###   ########.fr       */
+/*   Updated: 2022/02/16 11:28:49 by igorneumann      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,13 @@
 #include <stdlib.h>
 #include "Icharacter.hpp"
 
+class IMateriaSource
+{
+	public:
+		virtual ~IMateriaSource() {}
+		virtual void learnMateria(AMateria*) = 0;
+		virtual AMateria* createMateria(std::string const & type) = 0;
+};
 class AMateria
 {
 	protected:
