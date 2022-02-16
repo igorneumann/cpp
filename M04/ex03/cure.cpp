@@ -6,18 +6,19 @@
 /*   By: igorneumann <igorneumann@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/16 09:10:07 by igorneumann       #+#    #+#             */
-/*   Updated: 2022/02/16 09:52:40 by igorneumann      ###   ########.fr       */
+/*   Updated: 2022/02/16 10:55:09 by igorneumann      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Amateria.hpp"
+#include "Icharacter.hpp"
 
 Cure::Cure ()
 {
 	std::cout << "Cure was created empty" << std::endl;
 }
 
-Cure::Cure ( std::string type )
+Cure::Cure ( std::string const & type )
 {
 	this->type = type;
 	std::cout << "Cure " << this->type << " was created" << std::endl;
@@ -51,5 +52,5 @@ void Ice::clone() const
 
 void Cure::use(ICharacter& target)
 {
-	std::cout << "* heals " << target.getname() << " wounds *" << std::endl;
+	std::cout << "* heals " << target.getName() << " wounds *" << std::endl;
 }

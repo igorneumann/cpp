@@ -6,11 +6,12 @@
 /*   By: igorneumann <igorneumann@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/16 09:10:13 by igorneumann       #+#    #+#             */
-/*   Updated: 2022/02/16 09:39:45 by igorneumann      ###   ########.fr       */
+/*   Updated: 2022/02/16 11:25:49 by igorneumann      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Amateria.hpp"
+#include "Icharacter.hpp"
 
 Ice::Ice ()
 {

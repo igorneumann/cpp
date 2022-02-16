@@ -1,21 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Amateria.hpp                                       :+:      :+:    :+:   */
+/*   Abstracts.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: igorneumann <igorneumann@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 17:20:52 by ineumann          #+#    #+#             */
-/*   Updated: 2022/02/16 11:10:54 by igorneumann      ###   ########.fr       */
+/*   Updated: 2022/02/16 11:10:03 by igorneumann      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef AMATERIA_H
-# define AMATERIA_H
+#ifndef ABSTRACTS_H
+# define ABSTRACTS_H
 
 #include <iostream>
 #include <stdlib.h>
 #include "Icharacter.hpp"
+#include "Amateria.hpp"
 
 class AMateria
 {
@@ -49,20 +50,14 @@ class Ice : public AMateria
 		virtual void use(ICharacter& target);
 };
 
-class Cure : public AMateria
+class ICharacter
 {
-	protected:
-		std::string type;
-
 	public:
-		Cure();
-		Cure(std::string const & type);
-		Cure( const Cure &Cure );
-		~Cure(void);
-		Cure & operator = (const Cure &Cure);
-		std::string const & getType() const;
-		virtual Cure* clone() const;
-		virtual void use(ICharacter& target);
+		virtual ~ICharacter() {}
+		virtual std::string const & getName() const = 0;
+		virtual void equip(AMateria* m) = 0;
+		virtual void unequip(int idx) = 0;
+		virtual void use(int idx, ICharacter& target) = 0;
 };
 
 #endif

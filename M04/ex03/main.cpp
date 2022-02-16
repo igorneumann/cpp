@@ -6,11 +6,12 @@
 /*   By: igorneumann <igorneumann@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/16 08:32:27 by igorneumann       #+#    #+#             */
-/*   Updated: 2022/02/16 09:13:23 by igorneumann      ###   ########.fr       */
+/*   Updated: 2022/02/16 11:12:11 by igorneumann      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Amateria.hpp"
+#include "Icharacter.hpp"
 
 int main (void)
 {

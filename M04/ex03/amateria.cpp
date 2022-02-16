@@ -6,11 +6,17 @@
 /*   By: igorneumann <igorneumann@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/16 09:10:50 by igorneumann       #+#    #+#             */
-/*   Updated: 2022/02/16 09:26:41 by igorneumann      ###   ########.fr       */
+/*   Updated: 2022/02/16 10:55:08 by igorneumann      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Amateria.hpp"
+#include "Icharacter.hpp"
+
+AMateria::AMateria()
+{
+	std::cout << "AMateria was created empty" << std::endl;
+}
 
 AMateria::AMateria ( std::string type )
 {
