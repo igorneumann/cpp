@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   amateria.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: igorneumann <igorneumann@student.42.fr>    +#+  +:+       +#+        */
+/*   By: ineumann <ineumann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/16 09:10:50 by igorneumann       #+#    #+#             */
-/*   Updated: 2022/02/16 10:55:08 by igorneumann      ###   ########.fr       */
+/*   Updated: 2022/02/17 18:59:50 by ineumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ AMateria::AMateria()
 	std::cout << "AMateria was created empty" << std::endl;
 }
 
-AMateria::AMateria ( std::string type )
+AMateria::AMateria( std::string const & type )
 {
 	this->type = type;
 	std::cout << "Amateria " << this->type << " was created" << std::endl;
@@ -45,7 +45,12 @@ AMateria & AMateria::operator = (const AMateria &AMateria)
 	return (*this);
 }
 
-void use(ICharacter& target);
+void AMateria::use(ICharacter& target)
 {
-	this->AMateria::use(target);
+	std::cout << "* " << target.getName() <<" has been attacked * with " << this->type << std::endl;
+}
+
+std::string const & AMateria::getType() const
+{
+	return this->type;
 }

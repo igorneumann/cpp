@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Icharacter.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: igorneumann <igorneumann@student.42.fr>    +#+  +:+       +#+        */
+/*   By: ineumann <ineumann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 17:20:52 by ineumann          #+#    #+#             */
-/*   Updated: 2022/02/16 11:11:07 by igorneumann      ###   ########.fr       */
+/*   Updated: 2022/02/17 18:28:43 by ineumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 #include <iostream>
 #include <stdlib.h>
 #include "Amateria.hpp"
+
+class AMateria;
 
 class ICharacter
 {
@@ -31,16 +33,20 @@ class Character : public ICharacter
 {
 	public:
 		Character();
-		Character(std::string const & name);
+		Character( std::string const & name );
 		Character( const Character &Character );
 		~Character(void);
 		Character & operator = (const Character &Character);
 		std::string const & getType() const;
 		virtual Character* clone() const;
-		std::string getname();
+		std::string const & getName() const;
+		virtual void equip(AMateria* m);
+		virtual void unequip(int idx);
+		virtual void use(int idx, ICharacter& target);
 		
 	private:
 		std::string name;
+		AMateria *inventory[4];
 };
 
 #endif

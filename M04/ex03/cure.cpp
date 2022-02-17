@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cure.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: igorneumann <igorneumann@student.42.fr>    +#+  +:+       +#+        */
+/*   By: ineumann <ineumann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/16 09:10:07 by igorneumann       #+#    #+#             */
-/*   Updated: 2022/02/16 10:55:09 by igorneumann      ###   ########.fr       */
+/*   Updated: 2022/02/17 19:02:25 by ineumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,10 +29,10 @@ Cure::~Cure ( void )
 	std::cout << "Cure " << this->type << " was deleted" << std::endl;
 }
 
-Cure::Cure(const AMateria &AMateria)
+Cure::Cure(const Cure &Cure)
 {
 	//std::cout << "Copy constructor called" << std::endl;
-	*this = AMateria;
+	*this = Cure;
 }
 
 Cure & Cure::operator = (const Cure &Cure)
@@ -45,9 +45,15 @@ Cure & Cure::operator = (const Cure &Cure)
 	return (*this);
 }
 
-void Ice::clone() const
+Cure* Cure::clone() const
 {
 	std::cout << "* cloning a Cure *" << std::endl;
+	return (new Cure(this->type));
+}
+
+std::string const & Cure::getType() const
+{
+	return (this->type);
 }
 
 void Cure::use(ICharacter& target)

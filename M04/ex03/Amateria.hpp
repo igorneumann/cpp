@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Amateria.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: igorneumann <igorneumann@student.42.fr>    +#+  +:+       +#+        */
+/*   By: ineumann <ineumann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 17:20:52 by ineumann          #+#    #+#             */
-/*   Updated: 2022/02/16 11:28:49 by igorneumann      ###   ########.fr       */
+/*   Updated: 2022/02/17 17:35:18 by ineumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,8 @@
 #include <stdlib.h>
 #include "Icharacter.hpp"
 
-class IMateriaSource
-{
-	public:
-		virtual ~IMateriaSource() {}
-		virtual void learnMateria(AMateria*) = 0;
-		virtual AMateria* createMateria(std::string const & type) = 0;
-};
+class ICharacter;
+
 class AMateria
 {
 	protected:
@@ -31,13 +26,21 @@ class AMateria
 
 	public:
 		AMateria();
-		AMateria(std::string const & type);
+		AMateria( std::string const & type );
 		AMateria( const AMateria &AMateria );
-		~AMateria(void);
-		AMateria & operator = (const AMateria &AMateria);
+		~AMateria( void );
+		AMateria & operator = ( const AMateria &AMateria );
 		std::string const & getType() const; //Returns the materia type
 		virtual AMateria* clone() const = 0;
-		virtual void use(ICharacter& target);
+		virtual void use( ICharacter& target );
+};
+
+class IMateriaSource
+{
+	public:
+		virtual ~IMateriaSource() {}
+		virtual void learnMateria( AMateria* ) = 0;
+		virtual AMateria* createMateria( std::string const & type ) = 0;
 };
 
 class Ice : public AMateria
@@ -49,11 +52,11 @@ class Ice : public AMateria
 		Ice();
 		Ice(std::string const & type);
 		Ice( const Ice &Ice );
-		~Ice(void);
-		Ice & operator = (const Ice &Ice);
+		~Ice( void );
+		Ice & operator = ( const Ice &Ice );
 		std::string const & getType() const;
 		virtual Ice* clone() const;
-		virtual void use(ICharacter& target);
+		virtual void use( ICharacter& target );
 };
 
 class Cure : public AMateria
@@ -63,13 +66,13 @@ class Cure : public AMateria
 
 	public:
 		Cure();
-		Cure(std::string const & type);
+		Cure( std::string const & type );
 		Cure( const Cure &Cure );
-		~Cure(void);
-		Cure & operator = (const Cure &Cure);
+		~Cure( void );
+		Cure & operator = ( const Cure &Cure );
 		std::string const & getType() const;
 		virtual Cure* clone() const;
-		virtual void use(ICharacter& target);
+		virtual void use( ICharacter& target );
 };
 
 #endif

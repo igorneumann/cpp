@@ -3,15 +3,15 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: igorneumann <igorneumann@student.42.fr>    +#+  +:+       +#+         #
+#    By: ineumann <ineumann@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/19 20:19:58 by ineumann          #+#    #+#              #
-#    Updated: 2022/02/16 09:58:34 by igorneumann      ###   ########.fr        #
+#    Updated: 2022/02/17 18:30:36 by ineumann         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME			=	AMateria
-SRCS			=	main.cpp cure.cpp ice.cpp
+SRCS			=	amateria.cpp main.cpp cure.cpp ice.cpp character.cpp
 OBJS			=	$(SRCS:.cpp=.o)
 CC				=	@g++ -g -Wall -Wextra -Werror -std=c++98 #-fsanitize=address
 
