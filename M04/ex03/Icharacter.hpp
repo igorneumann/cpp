@@ -6,7 +6,7 @@
 /*   By: ineumann <ineumann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 17:20:52 by ineumann          #+#    #+#             */
-/*   Updated: 2022/02/17 18:28:43 by ineumann         ###   ########.fr       */
+/*   Updated: 2022/02/18 17:46:34 by ineumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ class Character : public ICharacter
 		std::string const & getType() const;
 		virtual Character* clone() const;
 		std::string const & getName() const;
+		AMateria* const & getItem(int idx) const;
 		virtual void equip(AMateria* m);
 		virtual void unequip(int idx);
 		virtual void use(int idx, ICharacter& target);

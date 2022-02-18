@@ -6,7 +6,7 @@
 /*   By: ineumann <ineumann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/16 09:10:07 by igorneumann       #+#    #+#             */
-/*   Updated: 2022/02/17 19:02:25 by ineumann         ###   ########.fr       */
+/*   Updated: 2022/02/18 19:15:00 by ineumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,18 +15,13 @@
 
 Cure::Cure ()
 {
-	std::cout << "Cure was created empty" << std::endl;
-}
-
-Cure::Cure ( std::string const & type )
-{
-	this->type = type;
+	this->type = "cure";
 	std::cout << "Cure " << this->type << " was created" << std::endl;
 }
 
 Cure::~Cure ( void )
 {
-	std::cout << "Cure " << this->type << " was deleted" << std::endl;
+	std::cout << "Cure type " << this->type << " was deleted" << std::endl;
 }
 
 Cure::Cure(const Cure &Cure)
@@ -40,7 +35,7 @@ Cure & Cure::operator = (const Cure &Cure)
 	if (this != &Cure)
 	{
 		//std::cout << "Assignation operator called" << std::endl;
-		this->type = Cure.getType();
+		this->type = "cure";
 	}
 	return (*this);
 }
@@ -48,7 +43,7 @@ Cure & Cure::operator = (const Cure &Cure)
 Cure* Cure::clone() const
 {
 	std::cout << "* cloning a Cure *" << std::endl;
-	return (new Cure(this->type));
+	return (new Cure());
 }
 
 std::string const & Cure::getType() const
