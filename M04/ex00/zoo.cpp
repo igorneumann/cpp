@@ -6,7 +6,7 @@
 /*   By: ineumann <ineumann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 17:36:55 by ineumann          #+#    #+#             */
-/*   Updated: 2022/02/10 17:19:31 by ineumann         ###   ########.fr       */
+/*   Updated: 2022/02/18 19:58:09 by ineumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,23 +46,7 @@ Animal & Animal::operator = (const Animal &Animal)
 
 void Animal::makeSound( void ) const
 {
-	int pos = 0;
-
-	std::string options[2] = {"Cat", "Dog"};
-	while (pos < 2 && this->type.compare(options[pos])!= 0)
-		pos++;
-	switch(pos)
-	{
-		case 0:
-			std::cout << "MEOW" << std::endl;
-			break;
-		case 1:
-			std::cout << "WOOF" << std::endl;
-			break;
-		case 2:
-			std::cout << "* * Spooky Undetermined sound * *" << std::endl;
-			break;
-	}
+	std::cout << "* * Spooky Undetermined sound * *" << std::endl;
 }
 
 std::string Animal::getType( void ) const
@@ -113,7 +97,7 @@ std::string Dog::getType( void ) const
 
 void Dog::makeSound( void ) const
 {
-	this->Animal::makeSound();
+	std::cout << "WOOF" << std::endl;
 }
 
 Cat::Cat () : Animal("Cat")
@@ -154,5 +138,5 @@ std::string Cat::getType( void ) const
 
 void Cat::makeSound( void ) const
 {
-	this->Animal::makeSound();
+	std::cout << "MEOW" << std::endl;
 }

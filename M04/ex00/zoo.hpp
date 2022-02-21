@@ -6,7 +6,7 @@
 /*   By: ineumann <ineumann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 17:20:52 by ineumann          #+#    #+#             */
-/*   Updated: 2022/02/10 17:07:02 by ineumann         ###   ########.fr       */
+/*   Updated: 2022/02/18 19:57:14 by ineumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ class Animal
 		Animal & operator = (const Animal &Animal);
 		std::string getType( void ) const;
 		void setType(std::string type);
-		void makeSound( void ) const;
+		virtual void makeSound( void ) const;
 
 	private:
 
@@ -40,11 +40,11 @@ class Dog : public Animal
 
 		Dog();
 		Dog (const Dog &Dog);
-		~Dog(void);
+		virtual ~Dog(void);
 		Dog & operator = (const Dog &Dog);
 		std::string getType( void ) const;
 		void setType(std::string type);
-		void makeSound( void ) const;
+		virtual void makeSound( void ) const;
 
 	private:
 };
@@ -55,11 +55,11 @@ class Cat : public Animal
 
 		Cat();
 		Cat (const Cat &Cat);
-		~Cat(void);
+		virtual ~Cat(void);
 		Cat & operator = (const Cat &Cat);
 		std::string getType( void ) const;
 		void setType(std::string type);
-		void makeSound( void ) const;
+		virtual void makeSound( void ) const;
 
 	private:
 };

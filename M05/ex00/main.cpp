@@ -5,32 +5,22 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ineumann <ineumann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/16 08:32:27 by igorneumann       #+#    #+#             */
-/*   Updated: 2022/02/18 19:42:51 by ineumann         ###   ########.fr       */
+/*   Created: 2022/02/20 12:11:35 by ineumann          #+#    #+#             */
+/*   Updated: 2022/02/21 19:34:25 by ineumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Icharacter.hpp"
-#include "Amateria.hpp"
+#include "Bureaucrat.hpp"
 
-int main()
+int main(void)
 {
-	IMateriaSource* src = new MateriaSource();
-	src->learnMateria(new Ice());
-	src->learnMateria(new Cure());
-	ICharacter* me = new Character("me");
-	AMateria* tmp;
-	tmp = src->createMateria("ice");
-	std::cout << tmp->getType() << std::endl;
-	me->equip(tmp);
-	tmp = src->createMateria("cure");
-	std::cout << tmp->getType() << std::endl;
-	me->equip(tmp);
-	ICharacter* bob = new Character("bob");
-	me->use(0, *bob);
-	me->use(1, *bob);
-	delete bob;
-	delete me;
-	delete src;
+try
+	{
+	/* do some stuff with bureaucrats */
+	}
+catch (std::exception & e)
+	{
+		std::cout << "EXCEPTION, " << e.what() << std::endl;
+	}
 	return 0;
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Animals.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: igorneumann <igorneumann@student.42.fr>    +#+  +:+       +#+        */
+/*   By: ineumann <ineumann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 17:36:55 by ineumann          #+#    #+#             */
-/*   Updated: 2022/02/16 08:24:48 by igorneumann      ###   ########.fr       */
+/*   Updated: 2022/02/18 20:06:14 by ineumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,23 +46,7 @@ Animal & Animal::operator = (const Animal &Animal)
 
 void Animal::makeSound( void ) const
 {
-	int pos = 0;
-
-	std::string options[2] = {"Cat", "Dog"};
-	while (pos < 2 && this->type.compare(options[pos])!= 0)
-		pos++;
-	switch(pos)
-	{
-		case 0:
-			std::cout << "MEOW" << std::endl;
-			break;
-		case 1:
-			std::cout << "WOOF" << std::endl;
-			break;
-		case 2:
-			std::cout << "* * Spooky Undetermined sound * *" << std::endl;
-			break;
-	}
+	std::cout << "* * Spooky Undetermined sound * *" << std::endl;
 }
 
 std::string Animal::getType( void ) const
@@ -73,4 +57,18 @@ std::string Animal::getType( void ) const
 void Animal::setType( std::string type )
 {
 	this->type = type;
+}
+
+std::string Animal::getIdea( int id ) const
+{
+	(void)id;
+	std::cout << "* * NO BRAIN * *" << std::endl;
+	return 0;
+}
+
+void Animal::setIdea( std::string cnt, int id )
+{
+	(void)id;
+	(void)cnt;
+	std::cout << "* * NO BRAIN * *" << std::endl;
 }

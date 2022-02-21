@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   zoo.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: igorneumann <igorneumann@student.42.fr>    +#+  +:+       +#+        */
+/*   By: ineumann <ineumann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 17:20:52 by ineumann          #+#    #+#             */
-/*   Updated: 2022/02/16 08:12:20 by igorneumann      ###   ########.fr       */
+/*   Updated: 2022/02/18 20:11:16 by ineumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ class Animal
 		Animal & operator = (const Animal &Animal);
 		std::string getType( void ) const;
 		void setType(std::string type);
-		void makeSound( void ) const;
+		virtual void makeSound( void ) const = 0;
 		virtual std::string getIdea( int id ) const = 0;
 		virtual void setIdea( std::string cnt, int id ) = 0;
 
