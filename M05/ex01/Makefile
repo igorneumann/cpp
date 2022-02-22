@@ -6,12 +6,12 @@
 #    By: ineumann <ineumann@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/19 20:19:58 by ineumann          #+#    #+#              #
-#    Updated: 2022/02/21 19:29:13 by ineumann         ###   ########.fr        #
+#    Updated: 2022/02/22 18:16:11 by ineumann         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME			=	Bureaucrat
-SRCS			=	main.cpp Bureaucrat.cpp highlow.cpp
+SRCS			=	main.cpp Bureaucrat.cpp highlow.cpp Form.cpp
 OBJS			=	$(SRCS:.cpp=.o)
 CC				=	@g++ -g -Wall -Wextra -Werror -std=c++98 #-fsanitize=address
 
@@ -24,7 +24,7 @@ clean:
 	@rm -f $(OBJS)
 
 fclean: clean
-	@rm -f $(NAME)
+	@rm -rf $(NAME) *.dSYM
 
 re: fclean all
 

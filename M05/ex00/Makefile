@@ -6,7 +6,7 @@
 #    By: ineumann <ineumann@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/19 20:19:58 by ineumann          #+#    #+#              #
-#    Updated: 2022/02/21 19:29:13 by ineumann         ###   ########.fr        #
+#    Updated: 2022/02/22 18:15:48 by ineumann         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,7 @@ clean:
 	@rm -f $(OBJS)
 
 fclean: clean
-	@rm -f $(NAME)
+	@rm -rf $(NAME) *.dSYM
 
 re: fclean all
 

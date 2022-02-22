@@ -6,7 +6,7 @@
 /*   By: ineumann <ineumann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/20 12:11:31 by ineumann          #+#    #+#             */
-/*   Updated: 2022/02/22 17:42:54 by ineumann         ###   ########.fr       */
+/*   Updated: 2022/02/22 18:35:41 by ineumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,5 +54,7 @@ class Bureaucrat
 		short int			grade;
 
 };
+
+std::ostream	& operator << ( std::ostream &out, const Bureaucrat &Bureaucrat );
 
 #endif

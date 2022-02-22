@@ -6,7 +6,7 @@
 /*   By: ineumann <ineumann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/20 12:11:23 by ineumann          #+#    #+#             */
-/*   Updated: 2022/02/22 17:49:44 by ineumann         ###   ########.fr       */
+/*   Updated: 2022/02/22 18:35:18 by ineumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ Bureaucrat::~Bureaucrat ( void )
 	std::cout << "Bureaucrat " << this->name << " grade " << this->getGrade() << " was deleted" << std::endl;
 }
 
-Bureaucrat::Bureaucrat(const Bureaucrat &Bureaucrat)
+Bureaucrat::Bureaucrat(const Bureaucrat &Bureaucrat) : name(Bureaucrat.name)
 {
 	std::cout << "Bureaucrat " << this->name << " grade " << this->getGrade() << " was copied" << std::endl;
 	*this = Bureaucrat;
@@ -75,4 +75,10 @@ std::string	const & Bureaucrat::getName() const
 short int	const & Bureaucrat::getGrade() const
 {
 		return this->grade;
+}
+
+std::ostream    &operator<<(std::ostream &out, const Bureaucrat &Bureaucrat)
+{
+	out << Bureaucrat.getName() << ", bureaucrat grade " << Bureaucrat.getGrade() << "." << std::endl;
+	return out;
 }

@@ -6,7 +6,7 @@
 /*   By: ineumann <ineumann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/20 12:11:23 by ineumann          #+#    #+#             */
-/*   Updated: 2022/02/22 17:48:45 by ineumann         ###   ########.fr       */
+/*   Updated: 2022/02/22 19:30:56 by ineumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ Bureaucrat::GradeTooHighException::~GradeTooHighException(void) throw () { }
 
 const char *Bureaucrat::GradeTooHighException::what() const throw ()
 {
-	std::string msg = "Can't increase, " + this->_name + "'s grade would be too low: " + std::to_string(this->_grade);
+	std::string msg = "Can't increase, " + this->_name + "'s grade would be too high: " + std::to_string(this->_grade);
 	const char* data = msg.data();
 	return data;
 }

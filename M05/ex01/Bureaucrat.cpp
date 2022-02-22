@@ -6,7 +6,7 @@
 /*   By: ineumann <ineumann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/20 12:11:23 by ineumann          #+#    #+#             */
-/*   Updated: 2022/02/22 17:49:44 by ineumann         ###   ########.fr       */
+/*   Updated: 2022/02/22 19:50:26 by ineumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ Bureaucrat::~Bureaucrat ( void )
 	std::cout << "Bureaucrat " << this->name << " grade " << this->getGrade() << " was deleted" << std::endl;
 }
 
-Bureaucrat::Bureaucrat(const Bureaucrat &Bureaucrat)
+Bureaucrat::Bureaucrat(const Bureaucrat &Bureaucrat) : name(Bureaucrat.name)
 {
 	std::cout << "Bureaucrat " << this->name << " grade " << this->getGrade() << " was copied" << std::endl;
 	*this = Bureaucrat;
@@ -72,7 +72,30 @@ std::string	const & Bureaucrat::getName() const
 		return this->name;
 }
 
-short int	const & Bureaucrat::getGrade() const
+short int const & Bureaucrat::getGrade() const
 {
 		return this->grade;
+}
+
+bool Bureaucrat::signForm(Form &Form) 
+{
+	if (Form.getSign())
+		std::cout << this->name << " cannot sign " << Form.getName() << ", already signed" << std::endl;
+	else if (this->grade < Form.getSign())
+	{
+		std::cout << this->name << " signs " << Form.getName() << std::endl;
+		return Form.beSigned(*this);
+	}
+	else
+	{
+		std::cout << this->name << " cannot sign " << Form.getName() << "grade too low" << std::endl;
+	}
+
+	return 0;
+}
+
+std::ostream & operator << ( std::ostream &out, const Bureaucrat &Bureaucrat )
+{
+	out << Bureaucrat.getName() << ", bureaucrat grade " << Bureaucrat.getGrade() << "." << std::endl;
+	return out;
 }
