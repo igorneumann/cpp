@@ -6,7 +6,7 @@
 /*   By: ineumann <ineumann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 17:56:31 by ineumann          #+#    #+#             */
-/*   Updated: 2022/02/23 17:26:10 by ineumann         ###   ########.fr       */
+/*   Updated: 2022/02/23 19:50:39 by ineumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ Form & Form::operator = ( const Form &Form )
 	return (*this);
 }
 
-bool const & Form::getSign(void) const { return this->_signed; }
+bool Form::getSign(void) const { return this->_signed; }
 
 std::string const & Form::getName(void) const { return this->_name; }
 
@@ -43,7 +43,7 @@ short int const & Form::getgtosign(void) const { return this->_gtosign; }
 
 short int const & Form::getgtorun(void) const { return this->_gtorun; }
 
-bool const & Form::beSigned(const Bureaucrat &Bureaucrat) 
+bool Form::beSigned(const Bureaucrat &Bureaucrat) 
 {
 	if (Bureaucrat.getGrade() < this->_gtosign)
 	{
@@ -55,6 +55,20 @@ bool const & Form::beSigned(const Bureaucrat &Bureaucrat)
 	}
 
 	return this->_signed;
+}
+
+bool Form::execute(Bureaucrat const & executor) const
+{
+	if (executor.getGrade() < this->_gtorun)
+	{
+		if (this->_signed)
+			return this->doMagic(this->getTgt());
+		else
+			throw Form::NotSignedException();
+		return 0;
+	}
+	throw Form::GradeTooLowException();
+	return 0;
 }
 
 Form::GradeTooHighException::GradeTooHighException () { }
@@ -74,3 +88,9 @@ std::ostream & operator << ( std::ostream &out, const Form &form )
 	out << "Form " << form.getName() << ", needs " << form.getgtosign() << " grade to be signed and " << form.getgtorun() << " grade to run." <<  std::endl;
 	return out;
 }
+
+Form::NotSignedException::NotSignedException () { }
+
+Form::NotSignedException::~NotSignedException(void) throw () { }
+
+const char *Form::NotSignedException::what() const throw () { return " form is not signed"; }

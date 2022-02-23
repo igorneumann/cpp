@@ -73,6 +73,7 @@
 		"cfenv": "cpp",
 		"__functional_03": "cpp",
 		"iomanip": "cpp",
-		"stack": "cpp"
+		"stack": "cpp",
+		"filesystem": "cpp"
 	}
 }
