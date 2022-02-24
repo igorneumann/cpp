@@ -6,7 +6,7 @@
 /*   By: ineumann <ineumann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/20 12:11:23 by ineumann          #+#    #+#             */
-/*   Updated: 2022/02/23 17:27:00 by ineumann         ###   ########.fr       */
+/*   Updated: 2022/02/24 17:45:22 by ineumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,7 @@ bool Bureaucrat::signForm(Form &Form)
 {
 	if (Form.getSign())
 		std::cout << this->name << " cannot sign " << Form.getName() << ", already signed" << std::endl;
-	else if (this->grade < Form.getSign())
+	else if (this->grade < Form.getgtosign())
 	{
 		std::cout << this->name << " signs " << Form.getName() << std::endl;
 		return Form.beSigned(*this);

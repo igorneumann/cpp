@@ -6,7 +6,7 @@
 /*   By: ineumann <ineumann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/20 12:11:31 by ineumann          #+#    #+#             */
-/*   Updated: 2022/02/22 19:49:55 by ineumann         ###   ########.fr       */
+/*   Updated: 2022/02/24 17:23:45 by ineumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ class Bureaucrat
 		std::string	const & getName(void) const;
 		short int	const & getGrade(void) const;
 		bool signForm(Form &Form);
+		bool executeForm(Form const & form);
 
 	class GradeTooHighException : public std::exception 
 		{

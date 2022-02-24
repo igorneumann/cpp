@@ -6,7 +6,7 @@
 /*   By: ineumann <ineumann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/20 12:11:23 by ineumann          #+#    #+#             */
-/*   Updated: 2022/02/23 17:27:00 by ineumann         ###   ########.fr       */
+/*   Updated: 2022/02/24 17:50:00 by ineumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,7 @@ bool Bureaucrat::signForm(Form &Form)
 {
 	if (Form.getSign())
 		std::cout << this->name << " cannot sign " << Form.getName() << ", already signed" << std::endl;
-	else if (this->grade < Form.getSign())
+	else if (this->grade < Form.getgtosign())
 	{
 		std::cout << this->name << " signs " << Form.getName() << std::endl;
 		return Form.beSigned(*this);
@@ -91,6 +91,17 @@ bool Bureaucrat::signForm(Form &Form)
 		std::cout << this->name << " cannot sign " << Form.getName() << ", grade is too low" << std::endl;
 	}
 
+	return 0;
+}
+
+bool Bureaucrat::executeForm(Form const & form)
+{
+	if (form.getSign())
+	{
+		std::cout << this->name << " executes " << form.getName() << std::endl;
+		return form.execute(*this);
+	}
+	std::cout << "EXPLICIT error message: **** *** **** ******" << std::endl;
 	return 0;
 }
 

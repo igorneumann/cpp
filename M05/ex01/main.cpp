@@ -6,7 +6,7 @@
 /*   By: ineumann <ineumann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/20 12:11:35 by ineumann          #+#    #+#             */
-/*   Updated: 2022/02/23 17:24:43 by ineumann         ###   ########.fr       */
+/*   Updated: 2022/02/24 17:47:03 by ineumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,8 @@ try
 	std::cout << "Checking copy form:" << std::endl;
 	std::cout << copyformi << std::endl;
 	std::cout << "Trying to sign with enough permits:" << std::endl;
+	test.signForm(formi);
+	std::cout << "Trying to sign already signed form:" << std::endl;
 	test.signForm(formi);
 	std::cout << "Decreasing rank below needed:" << std::endl;
 	test -= 85;

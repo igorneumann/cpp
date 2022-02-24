@@ -6,32 +6,32 @@
 /*   By: ineumann <ineumann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 17:29:50 by ineumann          #+#    #+#             */
-/*   Updated: 2022/02/23 20:01:30 by ineumann         ###   ########.fr       */
+/*   Updated: 2022/02/24 17:21:46 by ineumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PresidentialPardonForm.hpp"
 
-PresidentialPardonForm::PresidentialPardonForm( std::string const & tgt ) : Form("PresidentialPardonForm", 25, 5), tgt(tgt)
+PresidentialPardonForm::PresidentialPardonForm( std::string const & tgt ) : Form("PresidentialPardon", 25, 5), tgt(tgt)
 {
-	std::cout << "PresidentialPardonForm targeting " << this->tgt << " was created" << std::endl;
+	std::cout << "PresidentialPardon targeting " << this->tgt << " was created" << std::endl;
 }
 
 PresidentialPardonForm::PresidentialPardonForm( const PresidentialPardonForm &PresidentialPardonForm )  : Form("PresidentialPardonForm", 25, 5), tgt(PresidentialPardonForm.tgt)
 {
-	std::cout << "PresidentialPardonForm targeting " << this->tgt << " was copied" << std::endl;
+	std::cout << "PresidentialPardon targeting " << this->tgt << " was copied" << std::endl;
 	*this = PresidentialPardonForm;
 }
 
 PresidentialPardonForm::~PresidentialPardonForm( void )
 {
-	std::cout << "PresidentialPardonForm targeting " << this->tgt << " was deleted" << std::endl;
+	std::cout << "PresidentialPardon targeting " << this->tgt << " was deleted" << std::endl;
 }
 
 PresidentialPardonForm & PresidentialPardonForm::operator = ( const PresidentialPardonForm &PresidentialPardonForm )
 {
 	(void) PresidentialPardonForm;
-	std::cout << "Copying PresidentialPardonForm targeting " << this->tgt << std::endl;
+	std::cout << "Copying PresidentialPardon targeting " << this->tgt << std::endl;
 	return (*this);
 }
 
