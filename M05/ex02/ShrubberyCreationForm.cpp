@@ -6,7 +6,7 @@
 /*   By: ineumann <ineumann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 17:30:04 by ineumann          #+#    #+#             */
-/*   Updated: 2022/02/24 17:21:48 by ineumann         ###   ########.fr       */
+/*   Updated: 2022/02/25 18:11:03 by ineumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ bool ShrubberyCreationForm::doMagic( std::string const & tgt ) const
 	std::string str = tgt + "_shrubbery";
 	std::ofstream outfile (str);
 
-	outfile << "       ###\n      #o###\n    #####o###\n   #o#\\#|#/###\n    ###\\|/#o#\n     # }|{  #\nejm97  }|{\n" << std::endl;
+	outfile << "       ###\n      #o###\n    #####o###\n   #o#\\#|#/###\n    ###\\|/#o#\n     # }|{  #\nejm97  }|{" << std::endl;
 	outfile.close();
 	return 1;
 }

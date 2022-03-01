@@ -6,7 +6,7 @@
 /*   By: ineumann <ineumann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/24 17:53:22 by ineumann          #+#    #+#             */
-/*   Updated: 2022/02/24 19:06:16 by ineumann         ###   ########.fr       */
+/*   Updated: 2022/03/01 19:36:20 by ineumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,18 +17,18 @@
 
 Intern::Intern()
 {
-	std::cout << "Intern targeting " << " was created" << std::endl;
+	std::cout << "Intern was created" << std::endl;
 }
 
 Intern::Intern( const Intern &Intern )
 {
-	std::cout << "Intern targeting " << " was copied" << std::endl;
+	std::cout << "Intern was copied" << std::endl;
 	*this = Intern;
 }
 
 Intern::~Intern( void )
 {
-	std::cout << "Intern targeting " << " was deleted" << std::endl;
+	std::cout << "Intern was deleted" << std::endl;
 }
 
 Intern & Intern::operator = ( const Intern &Intern )

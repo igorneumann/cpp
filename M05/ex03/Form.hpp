@@ -6,7 +6,7 @@
 /*   By: ineumann <ineumann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 17:56:28 by ineumann          #+#    #+#             */
-/*   Updated: 2022/02/24 17:14:50 by ineumann         ###   ########.fr       */
+/*   Updated: 2022/03/01 17:49:23 by ineumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,21 +38,23 @@ class Form
 	class GradeTooHighException : public std::exception 
 		{
 			public:
-				GradeTooHighException();
+				GradeTooHighException(std::string name, short int gtosign, short int gtorun);
 				virtual ~GradeTooHighException() throw();
 				virtual const char* what() const throw();
 				std::string _name;
-				short int _grade;
+				short int _gtosign;
+				short int _gtorun;
 		};
 
 	class GradeTooLowException : public std::exception 
 		{
 			public:
-				GradeTooLowException();
+				GradeTooLowException(std::string name, short int gtosign, short int gtorun);
 				virtual ~GradeTooLowException() throw();
 				virtual const char* what() const throw();
 				std::string _name;
-				short int _grade;
+				short int _gtosign;
+				short int _gtorun;
 		};
 
 	class NotSignedException : public std::exception 

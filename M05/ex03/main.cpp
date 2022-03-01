@@ -6,7 +6,7 @@
 /*   By: ineumann <ineumann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/20 12:11:35 by ineumann          #+#    #+#             */
-/*   Updated: 2022/02/24 19:09:06 by ineumann         ###   ########.fr       */
+/*   Updated: 2022/03/01 19:30:00 by ineumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ try
 	std::cout << "Creating DAMN bureaucrat:" << std::endl;
 	Bureaucrat test("Igor", 50);
 	Bureaucrat copy(test);
+	Bureaucrat copy2 = test;
 
 	std::cout << "Checking original:" << std::endl;
 	std::cout << test << std::endl;
@@ -39,6 +40,10 @@ try
 
 	std::cout << "Creating one of those poor interns:" << std::endl;
 	Intern someRandomIntern;
+
+	std::cout << "Trying to clone them:" << std::endl;
+	Intern someRandomInterncopy(someRandomIntern);
+	Intern someRandomInterncopy2 = someRandomIntern;
 
 	std::cout << "Making poor interns create DAMN forms:" << std::endl;
 	Form* rrf;

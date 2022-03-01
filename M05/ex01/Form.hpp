@@ -6,7 +6,7 @@
 /*   By: ineumann <ineumann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 17:56:28 by ineumann          #+#    #+#             */
-/*   Updated: 2022/02/22 19:56:50 by ineumann         ###   ########.fr       */
+/*   Updated: 2022/03/01 18:00:59 by ineumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,30 +26,41 @@ class Form
 		Form( const Form &Form );
 		virtual ~Form( void );
 		Form & operator = ( const Form &Form );
-		bool const & getSign(void) const;
+		bool getSign(void) const;
 		std::string const & getName(void) const;
 		short int const & getgtosign(void) const;
 		short int const & getgtorun(void) const;
-		bool const & beSigned(const Bureaucrat &Bureaucrat);
+		bool beSigned(const Bureaucrat &Bureaucrat);
 
 	class GradeTooHighException : public std::exception 
 		{
 			public:
-				GradeTooHighException();
+				GradeTooHighException(std::string name, short int gtosign, short int gtorun);
 				virtual ~GradeTooHighException() throw();
 				virtual const char* what() const throw();
 				std::string _name;
-				short int _grade;
+				short int _gtosign;
+				short int _gtorun;
 		};
 
 	class GradeTooLowException : public std::exception 
 		{
 			public:
-				GradeTooLowException();
+				GradeTooLowException(std::string name, short int gtosign, short int gtorun);
 				virtual ~GradeTooLowException() throw();
 				virtual const char* what() const throw();
 				std::string _name;
-				short int _grade;
+				short int _gtosign;
+				short int _gtorun;
+		};
+
+	class NotSignedException : public std::exception 
+		{
+			public:
+				NotSignedException();
+				virtual ~NotSignedException() throw();
+				virtual const char* what() const throw();
+				std::string _form;
 		};
 
 	private:

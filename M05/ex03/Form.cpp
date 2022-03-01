@@ -6,7 +6,7 @@
 /*   By: ineumann <ineumann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 17:56:31 by ineumann          #+#    #+#             */
-/*   Updated: 2022/02/24 17:51:02 by ineumann         ###   ########.fr       */
+/*   Updated: 2022/03/01 17:54:21 by ineumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,12 @@
 
 Form::Form( std::string const & name, short int gtosign, short int gtorun ) : _name(name), _gtosign(gtosign), _gtorun(gtorun)
 {
-	std::cout << "Form " << this->_name << " was created" << std::endl;
+	if ( gtosign > 150 || gtorun > 150 )
+		throw Form::GradeTooLowException(name, gtosign, gtorun);
+	else if ( gtosign < 1 || gtorun < 1 )
+		throw Form::GradeTooHighException(name, gtosign, gtorun);
+	else
+		std::cout << "Form " << name << " was created" << std::endl;
 }
 
 Form::Form( const Form &Form ) : _name(Form._name), _gtosign(Form._gtosign), _gtorun(Form._gtorun)
@@ -51,7 +56,7 @@ bool Form::beSigned(const Bureaucrat &Bureaucrat)
 	}
 	else
 	{
-		throw Form::GradeTooLowException();
+		throw Form::GradeTooLowException(this->_name, this->_gtosign, this->_gtorun);
 	}
 
 	return this->_signed;
@@ -67,21 +72,41 @@ bool Form::execute(Bureaucrat const & executor) const
 			throw Form::NotSignedException();
 		return 0;
 	}
-	throw Form::GradeTooLowException();
+	throw Form::GradeTooLowException(this->_name, this->_gtosign, this->_gtorun);
 	return 0;
 }
 
-Form::GradeTooHighException::GradeTooHighException () { }
+Form::GradeTooHighException::GradeTooHighException (std::string name, short int gtosign, short int gtorun) 
+{
+	this->_name = name;
+	this->_gtosign = gtosign;
+	this->_gtorun = gtorun;
+}
 
 Form::GradeTooHighException::~GradeTooHighException(void) throw () { }
 
-const char *Form::GradeTooHighException::what() const throw () { return " grade is too high"; }
+const char *Form::GradeTooHighException::what() const throw () 
+{
+	std::string msg = this->_name + "'s grade is too high: " + std::to_string(this->_gtosign) + " - " + std::to_string(this->_gtorun);
+	const char* data = msg.data();
+	return data;
+}
 
-Form::GradeTooLowException::GradeTooLowException() { }
+Form::GradeTooLowException::GradeTooLowException(std::string name, short int gtosign, short int gtorun) 
+{
+	this->_name = name;
+	this->_gtosign = gtosign;
+	this->_gtorun = gtorun;
+}
 
 Form::GradeTooLowException::~GradeTooLowException(void) throw () { }
 
-const char *Form::GradeTooLowException::what() const throw () {	return " grade is too low"; }
+const char *Form::GradeTooLowException::what() const throw () 
+{
+	std::string msg = this->_name + "'s grade is too low: " + std::to_string(this->_gtosign) + " - " + std::to_string(this->_gtorun);
+	const char* data = msg.data();
+	return data;
+}
 
 std::ostream & operator << ( std::ostream &out, const Form &form )
 {

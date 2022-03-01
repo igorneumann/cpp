@@ -6,7 +6,7 @@
 /*   By: ineumann <ineumann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/20 12:11:31 by ineumann          #+#    #+#             */
-/*   Updated: 2022/02/24 17:23:45 by ineumann         ###   ########.fr       */
+/*   Updated: 2022/02/25 17:41:02 by ineumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,8 @@ class Bureaucrat
 				GradeTooHighException(std::string name, short int grade);
 				virtual ~GradeTooHighException() throw();
 				virtual const char* what() const throw();
+
+			private:
 				std::string _name;
 				short int _grade;
 		};
@@ -49,6 +51,8 @@ class Bureaucrat
 				GradeTooLowException(std::string name, short int grade);
 				virtual ~GradeTooLowException() throw();
 				virtual const char* what() const throw();
+
+			private:
 				std::string _name;
 				short int _grade;
 		};

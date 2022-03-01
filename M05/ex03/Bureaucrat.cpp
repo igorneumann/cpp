@@ -6,7 +6,7 @@
 /*   By: ineumann <ineumann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/20 12:11:23 by ineumann          #+#    #+#             */
-/*   Updated: 2022/02/24 17:50:00 by ineumann         ###   ########.fr       */
+/*   Updated: 2022/02/25 17:40:00 by ineumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,21 +30,21 @@ Bureaucrat::~Bureaucrat ( void )
 
 Bureaucrat::Bureaucrat(const Bureaucrat &Bureaucrat) : name(Bureaucrat.name)
 {
-	std::cout << "Bureaucrat " << this->name << " grade " << this->getGrade() << " was copied" << std::endl;
 	*this = Bureaucrat;
+	std::cout << "Bureaucrat " << this->name << " grade " << this->grade << " was copied" << std::endl;
 }
 
 Bureaucrat & Bureaucrat::operator = (const Bureaucrat &Bureaucrat)
 {
 	if (this != &Bureaucrat)
 	{
-		std::cout << "Copying Bureaucrat" << Bureaucrat.getName() << " grade " << Bureaucrat.getGrade() << std::endl;
+		std::cout << "Copying Bureaucrat" << Bureaucrat.getName() << " grade " << Bureaucrat.grade << std::endl;
 		if (Bureaucrat.getGrade() > 150)
 			throw Bureaucrat::GradeTooHighException(Bureaucrat.getName(), Bureaucrat.getGrade());
 		else if (Bureaucrat.getGrade() < 1)
 			throw Bureaucrat::GradeTooHighException(Bureaucrat.getName(), Bureaucrat.getGrade());
 		else
-			this->grade = Bureaucrat.getGrade();
+			this->grade = Bureaucrat.grade;
 	}
 	return (*this);
 }

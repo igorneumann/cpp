@@ -6,7 +6,7 @@
 /*   By: ineumann <ineumann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/20 12:11:35 by ineumann          #+#    #+#             */
-/*   Updated: 2022/02/24 17:48:14 by ineumann         ###   ########.fr       */
+/*   Updated: 2022/02/25 17:48:59 by ineumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ try
 	std::cout << "Creating DAMN bureaucrat:" << std::endl;
 	Bureaucrat test("Igor", 50);
 	Bureaucrat copy(test);
+	Bureaucrat copy2 = test;
 
 	std::cout << "Checking original:" << std::endl;
 	std::cout << test << std::endl;
@@ -39,23 +40,32 @@ try
 	std::cout << "Creating DAMN form:" << std::endl;
 	PresidentialPardonForm PPformi("Igor");
 	PresidentialPardonForm PPformicp(PPformi);
+	PresidentialPardonForm PPformicp2 = PPformi;
 	RobotomyRequestForm RRformi("Pepito");
 	RobotomyRequestForm RRformicp(RRformi);
+	RobotomyRequestForm RRformicp2 = RRformi;
 	ShrubberyCreationForm SCformi("Miki");
 	ShrubberyCreationForm SCformicp(SCformi);
+	ShrubberyCreationForm SCformicp2 = SCformi;
 
 	std::cout << "\nChecking original form:" << std::endl;
 	std::cout << PPformi << std::endl;
 	std::cout << "\nChecking copy form:" << std::endl;
 	std::cout << PPformicp << std::endl;
+	std::cout << "\nChecking copy form2:" << std::endl;
+	std::cout << PPformicp2 << std::endl;
 	std::cout << "\nChecking original form:" << std::endl;
 	std::cout << RRformi << std::endl;
 	std::cout << "\nChecking copy form:" << std::endl;
 	std::cout << RRformicp << std::endl;
+	std::cout << "\nChecking copy form2:" << std::endl;
+	std::cout << RRformicp2 << std::endl;
 	std::cout << "\nChecking original form:" << std::endl;
 	std::cout << SCformi << std::endl;
 	std::cout << "\nChecking copy form:" << std::endl;
 	std::cout << SCformicp << std::endl;
+	std::cout << "\nChecking copy form2:" << std::endl;
+	std::cout << SCformicp2 << std::endl;
 
 	std::cout << test << std::endl;
 	std::cout << SCformi << std::endl;
