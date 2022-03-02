@@ -6,7 +6,7 @@
 /*   By: ineumann <ineumann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/25 19:14:52 by ineumann          #+#    #+#             */
-/*   Updated: 2022/02/28 20:31:35 by ineumann         ###   ########.fr       */
+/*   Updated: 2022/03/02 19:23:11 by ineumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,10 +42,11 @@ Checker & Checker::operator = (const Checker &Checker)
 
 int		Checker::fixedcheck()
 {
-	if ( this->_cont == "-inff" || this->_cont == "+inff" || this->_cont == "nanf" )
-		return (0);
-	else if ( this->_cont == "-inf" || this->_cont == "+inf" || this->_cont == "nan" )
-		return (1);
+	std::cout << "String is: " << this->_cont << std::endl;
+	if ( this->_cont == "-inff" || this->_cont == "+inff" || this->_cont == "-inf" || this->_cont == "+inf" )
+		return (5);
+	else if ( this->_cont == "nanf" || this->_cont == "nan" )
+		return (6);
 	return (check());
 }
 
@@ -56,11 +57,7 @@ int		Checker::check()
 	int letter = 0;
 	int number = 0;
 
-	if (this->_cont[1] == "inf" || this->_cont[1] == "inff")
-		return (5);
-	else if (this->_cont[1] == "nan" || this->_cont[1] == "nanf")
-		return (6);
-	else for (int i = 0; i < this->_size; i++)
+	for (int i = 0; i < this->_size; i++)
 	{
 		if (!isprint(this->_cont[i]))
 			return (4);
@@ -88,24 +85,30 @@ bool 	Checker::run()
 	switch(fixedcheck())
 	{
 		case 0:
+			std::cout << "Its a FLOAT" << std::endl;
 			Checker::returnfloat();
 			break;
 		case 1:
+			std::cout << "Its a DOUBLE" << std::endl;
 			Checker::returndouble();
 			break;
 		case 2:
+			std::cout << "Its a INT" << std::endl;
 			Checker::returnint();
 			break;
 		case 3:
+			std::cout << "Its a CHAR" << std::endl;
 			Checker::returnchar();
 			break;
 		case 4:
 			std::cout << "Invalid string" << std::endl;
 			return 0;
 		case 5:
+			std::cout << "Its a INF" << std::endl;
 			Checker::returninf();
 			break;
 		case 6:
+			std::cout << "Its a NAN" << std::endl;
 			Checker::returnnan();
 			break;
 	}
