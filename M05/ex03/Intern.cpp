@@ -6,7 +6,7 @@
 /*   By: ineumann <ineumann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/24 17:53:22 by ineumann          #+#    #+#             */
-/*   Updated: 2022/03/01 19:36:20 by ineumann         ###   ########.fr       */
+/*   Updated: 2022/03/02 18:28:43 by ineumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,50 +38,48 @@ Intern & Intern::operator = ( const Intern &Intern )
 	return (*this);
 }
 
-std::string convert(std::string s)
+Form *Intern::CreateShrubberyCreationForm(std::string const & target)
 {
-	int n = s.length();
-	std::string out;
-	char tmp;
+	return (new ShrubberyCreationForm(target));
+}
 
-	for (int i = 0; i < n; i++) 
-	{
-		if (s[i] != ' ')
-			tmp = s[i];
-		else
-		{
-			i++;
-			tmp = toupper(s[i]);
-		}
-		out = out + tmp;
-	}
-	tmp = toupper(s[0]);
-	out[0] = tmp;
-	return out;
+Form *Intern::CreateRobotomyForm(std::string const & target)
+{
+	return (new RobotomyRequestForm(target));
+}
+
+Form *Intern::CreatePresidentialPardonForm(std::string const & target)
+{
+	return (new PresidentialPardonForm(target));
 }
 
 Form *Intern::makeForm( std::string const & name,  std::string const & target )
 {
-	std::string tmp;
-	tmp = convert(name);
-	Form* out = NULL;
 	int pos = 0;
 
-	std::string options[3] = {"PresidentialPardon", "RobotomyRequest", "ShrubberyCreation"};
-	while (pos < 3 && tmp.compare(options[pos])!= 0)
-		pos++;
-	switch(pos)
-	{
-		case 0:
-			out = new PresidentialPardonForm(target);
-			return out;
-		case 1:
-			out = new RobotomyRequestForm(target);
-			return out;
-		case 2:
-			out = new ShrubberyCreationForm(target);
-			return out;
-	}
-	std::cout << name << ": form type not known, options are:\n- Presidential Pardon\n- Roboto my Request\n- Shrubbery Creation\n" << std::endl;
-	return out;
+	std::string Targets[3] = {"shrubbery creation", "robotomy request", "presidential pardon"};
+	Form *(Intern::*aforms[3])(const std::string &target) = {&Intern::CreatePresidentialPardonForm, &Intern::CreateRobotomyForm, &Intern::CreateShrubberyCreationForm};
+		for (pos = 0; name.compare(Targets[pos]) != 0; pos++)
+		{
+			if (pos == 3)
+			{
+				throw InvalidFormNameError(name);
+				return (0);
+			}
+		}
+	return (this->*aforms[pos])(target);
+}
+
+Intern::InvalidFormNameError::InvalidFormNameError ( std::string _fname ) 
+{ 
+	this->_fname = _fname;
+}
+
+Intern::InvalidFormNameError::~InvalidFormNameError(void) throw () { }
+
+const char *Intern::InvalidFormNameError::what() const throw () 
+{
+	std::string msg = "Function Unknown: " + this->_fname;
+	const char* data = msg.data();
+	return data;
 }
