@@ -6,7 +6,7 @@
 /*   By: ineumann <ineumann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/25 19:14:52 by ineumann          #+#    #+#             */
-/*   Updated: 2022/03/02 19:23:11 by ineumann         ###   ########.fr       */
+/*   Updated: 2022/03/03 19:04:45 by ineumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,8 @@ Checker::Checker ( std::string _cont, int _size )
 
 Checker::~Checker ( void )
 {
-	std::cout << "Checker destroyed" << std::endl;}
+	std::cout << "Checker destroyed" << std::endl;
+}
 
 Checker::Checker(const Checker &Checker)
 {
