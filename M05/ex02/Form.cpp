@@ -20,6 +20,7 @@ Form::Form( std::string const & name, short int gtosign, short int gtorun ) : _n
 		throw Form::GradeTooHighException(name, gtosign, gtorun);
 	else
 		std::cout << "Form " << name << " was created" << std::endl;
+	this->_signed = 0;
 }
 
 Form::Form( const Form &Form ) : _name(Form._name), _gtosign(Form._gtosign), _gtorun(Form._gtorun)

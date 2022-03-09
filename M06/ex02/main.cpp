@@ -6,7 +6,7 @@
 /*   By: ineumann <ineumann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/03 17:25:17 by ineumann          #+#    #+#             */
-/*   Updated: 2022/03/03 19:28:43 by ineumann         ###   ########.fr       */
+/*   Updated: 2022/03/09 17:37:33 by ineumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,22 +38,27 @@ void identify(Base& p)
 		std::cout << "Type is C" << std::endl;
 }
 
-int main ( void )
+Base * generate(void)
 {
-	Base *tmp = NULL;
  	srand (time(NULL));
 	switch(rand() % 3)
 	{
 		case 0:
-			tmp = dynamic_cast<Base *>(new A);
+			return dynamic_cast<Base *>(new A);
 			break;
 		case 1:
-			tmp = dynamic_cast<Base *>(new B);
+			return dynamic_cast<Base *>(new B);
 			break;
 		case 2:
-			tmp = dynamic_cast<Base *>(new C);
+			return dynamic_cast<Base *>(new C);
 			break;
 	}
+	return dynamic_cast<Base *>(new A);
+}
+
+int main ( void )
+{
+	Base *tmp = generate();
 	identify(tmp);
 	identify(*tmp);
 	return (0);
