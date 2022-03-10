@@ -6,11 +6,11 @@
 #    By: ineumann <ineumann@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/25 18:37:43 by ineumann          #+#    #+#              #
-#    Updated: 2022/03/09 19:05:17 by ineumann         ###   ########.fr        #
+#    Updated: 2022/03/09 19:27:01 by ineumann         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME			=	iter
+NAME			=	array
 SRCS			=	main.cpp
 OBJS			=	$(SRCS:.cpp=.o)
 CC				=	@g++ -g -Wall -Wextra -Werror -std=c++98 #-fsanitize=address
