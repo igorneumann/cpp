@@ -6,7 +6,7 @@
 /*   By: ineumann <ineumann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 18:42:42 by ineumann          #+#    #+#             */
-/*   Updated: 2022/03/09 19:24:55 by ineumann         ###   ########.fr       */
+/*   Updated: 2022/03/14 18:29:30 by ineumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,12 @@ int main( void )
 	::iter( d, 7, func1 );
 	::iter( d, 7, func2 );
 	::iter( d, 7, func3 );
+
+	int tab[] = { 0, 1, 2, 3, 4 }; // <--- Qué sentido tiene no poder escribir int[] tab. No sería más simple??
+	Awesome tab2[5];
+
+	::iter( tab, 5, print );
+	::iter( tab2, 5, print );
 
 	return 0;
 }
